@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'motion/react';
 import { MapPin, Search, Calendar, Users, ChevronRight, Sparkles } from 'lucide-react';
 import { cn } from '../lib/utils';
 import { useNavigate } from 'react-router-dom';
-import videoBg from '../pages/video.mp4';
 
 const HeroTabs = () => {
   const [activeTab, setActiveTab] = useState("Retreats");
@@ -70,7 +69,7 @@ export const Hero = () => {
           preload="metadata"
           className="w-full h-full object-cover"
         >
-          <source src={videoBg} type="video/mp4" />
+          <source src="/video.mp4" type="video/mp4" />
         </video>
         
         {/* Cinematic Gradient Overlays */}

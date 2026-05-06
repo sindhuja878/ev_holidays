@@ -16,7 +16,7 @@ const domesticDestinations = [
     emoji: "🏔️",
     highlights: "HIMALAYAS • FORTS • SPIRITUALITY",
     description: "Rajasthan forts, Ladakh valleys, Taj Mahal, sacred Varanasi and beyond.",
-    image: "https://images.unsplash.com/photo-1599661046289-e31887476316?auto=format&fit=crop&q=80&w=1200"
+    image: "https://loremflickr.com/1200/800/india,himalayas,fort"
   },
   {
     title: "North East India",
@@ -30,14 +30,14 @@ const domesticDestinations = [
     emoji: "🐚",
     highlights: "ISLANDS • REEFS • HISTORY",
     description: "Pristine beaches, crystal waters, Cellular Jail, and unforgettable island sunsets.",
-    image: "https://images.unsplash.com/photo-1589136142558-94675c602a40?auto=format&fit=crop&q=80&w=1200"
+    image: "https://loremflickr.com/1200/800/andaman,beach,island"
   },
   {
     title: "Lakshadweep Islands",
     emoji: "🌊",
     highlights: "HIDDEN GEM • CORAL REEFS",
     description: "India's most exclusive island destination — untouched lagoons and pristine reefs.",
-    image: "https://images.unsplash.com/photo-1544735745-b911e921d7b6?auto=format&fit=crop&q=80&w=1200"
+    image: "https://loremflickr.com/1200/800/lakshadweep,coral,reef"
   },
   {
     title: "West & Central India",
@@ -68,21 +68,21 @@ const internationalDestinations = [
     emoji: "🏮",
     highlights: "CULTURE • BEACHES • FOOD",
     description: "Bangkok temples, Phuket beaches, Chiang Mai night markets and legendary street food.",
-    image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&q=80&w=1200"
+    image: "https://loremflickr.com/1200/800/thailand,bangkok,temple"
   },
   {
     title: "Singapore",
     emoji: "🏙️",
     highlights: "CITY • GARDENS • CUISINE",
     description: "Marina Bay Sands, Gardens by the Bay, Sentosa — Asia's food and culture capital.",
-    image: "https://images.unsplash.com/photo-1565967511840-789a7109289d?auto=format&fit=crop&q=80&w=1200"
+    image: "https://loremflickr.com/1200/800/singapore,marina,bay"
   },
   {
     title: "Malaysia",
     emoji: "🌺",
     highlights: "NATURE • HERITAGE • ISLANDS",
     description: "Petronas Towers, Penang heritage streets, Langkawi islands and Bornean rainforests.",
-    image: "https://images.unsplash.com/photo-1533035353720-f1ff6a7461bd?auto=format&fit=crop&q=80&w=1200"
+    image: "https://loremflickr.com/1200/800/malaysia,kualalumpur,nature"
   },
   {
     title: "Vietnam",
@@ -117,7 +117,7 @@ const internationalDestinations = [
     emoji: "🎡",
     highlights: "SILK ROAD • MOSAICS • HISTORY",
     description: "Samarkand's breathtaking mosaics, Bukhara mosques and the magic of Central Asia.",
-    image: "https://images.unsplash.com/photo-1579737119022-777e4bceefca?auto=format&fit=crop&q=80&w=1200"
+    image: "https://loremflickr.com/1200/800/uzbekistan,samarkand,mosque"
   },
   {
     title: "Mauritius",

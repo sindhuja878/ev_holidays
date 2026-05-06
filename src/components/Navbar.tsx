@@ -51,10 +51,7 @@ export const Navbar = () => {
             className="h-8 md:h-10 w-auto object-contain"
             referrerPolicy="no-referrer"
           />
-          <span className={cn(
-            "text-2xl md:text-3xl font-script font-normal tracking-tight transition-colors duration-500",
-            isDarkBase ? "text-white" : "text-brand-navy"
-          )}>
+          <span className="logo-text logo-glow">
             EV Holidays
           </span>
         </Link>

@@ -10,9 +10,11 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
             <Link to="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-brand-navy rounded-lg flex items-center justify-center">
-                <Plane className="text-white w-4 h-4 -rotate-45" />
-              </div>
+              <img 
+                src="/logo.png" 
+                alt="EV Holidays Logo" 
+                className="h-8 w-auto object-contain"
+              />
               <div className="flex flex-col text-white">
                 <span className="text-lg font-extrabold tracking-tighter">EV<span className="gold-text">HOLIDAYS</span></span>
               </div>

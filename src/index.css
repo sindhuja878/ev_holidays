@@ -5,6 +5,7 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Instrument Serif", serif;
   --font-script: "Playball", cursive;
+  --font-spartan: "League Spartan", sans-serif;
 
   --color-emerald: #064e3b;
   --color-emerald-dark: #022c22;
@@ -111,3 +112,44 @@
   pointer-events: none;
 }
 
+/* ── Premium Logo Typography ───────────────────────────────── */
+.logo-text {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #146b0a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow:
+    0 0 18px rgba(20, 107, 10, 0.35),
+    0 0 40px rgba(20, 107, 10, 0.18);
+  transform: translateZ(0);
+  transition: transform 0.4s ease, text-shadow 0.4s ease;
+  font-size: clamp(1.75rem, 4vw, 3.25rem);
+}
+
+.logo-text:hover {
+  transform: translateY(-2px) translateZ(0);
+  text-shadow:
+    0 0 28px rgba(20, 107, 10, 0.55),
+    0 0 60px rgba(20, 107, 10, 0.30);
+}
+
+/* Ambient glow capsule behind logo text */
+.logo-glow {
+  position: relative;
+}
+.logo-glow::before {
+  content: "";
+  position: absolute;
+  inset: -4px -12px;
+  border-radius: 9999px;
+  background: radial-gradient(ellipse at center, rgba(20,107,10,0.22) 0%, transparent 70%);
+  filter: blur(10px);
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  opacity: 0;
+}
+.logo-glow:hover::before {
+  opacity: 1;
+}
