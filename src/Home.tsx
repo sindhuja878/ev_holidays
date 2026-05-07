@@ -395,28 +395,24 @@ const WhoWeAreSection = () => {
           {/* Left Side: Cinematic Visuals */}
           <div className="relative group">
             {/* Main Visual Frame */}
-            <div className="relative aspect-[4/5] md:aspect-[5/6] rounded-[2rem] overflow-hidden fancy-border shadow-2xl">
+            <div className="relative aspect-[4/5] md:aspect-[5/6] rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10">
               <img 
-                src="https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&q=80&w=1200" 
-                alt="Ha Long Bay Vietnam" 
-                className="w-full h-full object-cover grayscale-[0.1] group-hover:scale-105 transition-transform duration-[4s]"
+                src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&q=80&w=1200" 
+                alt="Luxury Cinematic Travel" 
+                className="w-full h-full object-cover brightness-[0.6] contrast-125 group-hover:scale-105 transition-transform duration-[6s] ease-out"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a1a0a]/90 via-[#0a1a0a]/30 to-transparent" />
+              <div className="absolute inset-0 bg-brand-navy/20 mix-blend-overlay" />
               
-              {/* Text Tag Over Image */}
-              <div className="absolute top-8 left-8">
-                <span className="text-white/80 text-[10px] font-black uppercase tracking-[0.3em] drop-shadow-md">Adventure In Vietnam</span>
-              </div>
-
               {/* Pin point and line */}
               <div className="absolute bottom-16 right-20">
                 <div className="relative">
-                  <div className="w-4 h-4 bg-white rounded-full flex items-center justify-center animate-pulse">
-                    <div className="w-1.5 h-1.5 bg-brand-navy rounded-full" />
+                  <div className="w-4 h-4 bg-white/80 rounded-full flex items-center justify-center animate-pulse shadow-[0_0_15px_rgba(255,255,255,0.5)]">
+                    <div className="w-1.5 h-1.5 bg-[#146b0a] rounded-full" />
                   </div>
                   <svg className="absolute bottom-2 right-2 w-32 h-24 pointer-events-none" viewBox="0 0 100 100" fill="none">
-                    <path d="M90,90 C70,70 30,30 10,10" stroke="white" strokeWidth="1" strokeDasharray="4 4" className="opacity-40" />
+                    <path d="M90,90 C70,70 30,30 10,10" stroke="rgba(255,255,255,0.3)" strokeWidth="1" strokeDasharray="4 4" className="opacity-40" />
                   </svg>
                 </div>
               </div>
@@ -424,33 +420,36 @@ const WhoWeAreSection = () => {
 
             {/* Floating Stats Cards */}
             <motion.div 
-              initial={{ x: 20, opacity: 0 }}
+              initial={{ x: -20, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="absolute -top-10 right-4 lg:-right-8 liquid-glass p-6 md:p-8 rounded-2xl min-w-[180px] text-center z-20"
+              animate={{ y: [0, -10, 0] }}
+              transition={{ delay: 0.2, y: { duration: 4, repeat: Infinity, ease: "easeInOut" } }}
+              className="absolute -top-10 left-4 lg:-left-8 bg-white/5 backdrop-blur-xl border border-white/10 p-6 md:p-8 rounded-2xl min-w-[180px] text-center z-20 shadow-[0_8px_32px_rgba(0,0,0,0.3)] hover:bg-white/10 hover:-translate-y-1 transition-all duration-500"
             >
-              <div className="text-4xl font-black text-[#22c55e] mb-2 tracking-tighter">1500+</div>
-              <div className="text-[10px] font-black uppercase tracking-[0.2em] text-white">Trips Completed</div>
+              <div className="text-4xl font-black text-[#146b0a] mb-2 tracking-tighter drop-shadow-md">1500+</div>
+              <div className="text-[10px] font-black uppercase tracking-[0.2em] text-white/90">Trips Completed</div>
             </motion.div>
 
             <motion.div 
               initial={{ x: 30, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              className="absolute top-1/2 -right-6 lg:-right-12 -translate-y-1/2 liquid-glass p-6 md:p-8 rounded-2xl min-w-[180px] text-center z-20"
+              animate={{ y: [0, 8, 0] }}
+              transition={{ delay: 0.4, y: { duration: 5, repeat: Infinity, ease: "easeInOut" } }}
+              className="absolute top-1/2 -right-6 lg:-right-12 -translate-y-1/2 bg-white/5 backdrop-blur-xl border border-white/10 p-6 md:p-8 rounded-2xl min-w-[180px] text-center z-20 shadow-[0_8px_32px_rgba(0,0,0,0.3)] hover:bg-white/10 hover:-translate-y-1 transition-all duration-500"
             >
-              <div className="text-4xl font-black text-[#22c55e] mb-2 tracking-tighter">100%</div>
-              <div className="text-[10px] font-black uppercase tracking-[0.2em] text-white">Personalised</div>
+              <div className="text-4xl font-black text-[#146b0a] mb-2 tracking-tighter drop-shadow-md">100%</div>
+              <div className="text-[10px] font-black uppercase tracking-[0.2em] text-white/90">Personalised</div>
             </motion.div>
 
             <motion.div 
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.6 }}
-              className="absolute -bottom-10 -left-6 liquid-glass p-6 md:p-8 rounded-2xl min-w-[180px] text-center z-20"
+              animate={{ y: [0, -6, 0] }}
+              transition={{ delay: 0.6, y: { duration: 4.5, repeat: Infinity, ease: "easeInOut" } }}
+              className="absolute -bottom-10 -left-6 bg-white/5 backdrop-blur-xl border border-white/10 p-6 md:p-8 rounded-2xl min-w-[180px] text-center z-20 shadow-[0_8px_32px_rgba(0,0,0,0.3)] hover:bg-white/10 hover:-translate-y-1 transition-all duration-500"
             >
-              <div className="text-4xl font-black text-[#22c55e] mb-2 tracking-tighter">500+</div>
-              <div className="text-[10px] font-black uppercase tracking-[0.2em] text-white">Happy Customers</div>
+              <div className="text-4xl font-black text-[#146b0a] mb-2 tracking-tighter drop-shadow-md">500+</div>
+              <div className="text-[10px] font-black uppercase tracking-[0.2em] text-white/90">Happy Customers</div>
             </motion.div>
           </div>
 
