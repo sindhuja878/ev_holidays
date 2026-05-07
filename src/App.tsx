@@ -10,12 +10,12 @@ import TeamOutings from './pages/TeamOutings';
 import Destinations from './pages/Destinations';
 import { Layout } from './components/Layout';
 import { AIPopup } from './components/AIPopup';
-import { Preloader } from './components/Preloader';
+
 
 export default function App() {
   return (
     <BrowserRouter>
-      <Preloader />
+
       <AIPopup />
       <Routes>
         <Route path="/" element={<Home />} />
