@@ -912,9 +912,18 @@ export default function Home() {
       </section>
 
       {/* --- CTA SECTION --- */}
-      <section className="py-40 bg-[#010801] relative overflow-hidden">
-        {/* Subtle background particles / glow */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(20,107,10,0.1)_0%,transparent_70%)] pointer-events-none" />
+      <section className="py-40 relative overflow-hidden bg-[#010801]">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&q=80&w=2000" 
+            alt="Seashore aerial view" 
+            className="w-full h-full object-cover opacity-60"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-[#010801]/70 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#010801] via-transparent to-[#010801]/80" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(20,107,10,0.15)_0%,transparent_70%)] pointer-events-none" />
+        </div>
         
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
@@ -923,7 +932,7 @@ export default function Home() {
           transition={{ duration: 1, ease: "easeOut" }}
           className="container mx-auto max-w-7xl px-6 relative z-10"
         >
-          <div className="bg-gradient-to-b from-[#021a02]/80 to-[#010801] backdrop-blur-3xl rounded-[4rem] md:rounded-[5rem] p-16 md:p-24 relative overflow-hidden text-center border border-[#146b0a]/30 shadow-[0_0_80px_rgba(20,107,10,0.15)]">
+          <div className="bg-gradient-to-b from-[#021a02]/80 to-[#010801]/90 backdrop-blur-3xl rounded-[4rem] md:rounded-[5rem] p-16 md:p-24 relative overflow-hidden text-center border border-[#146b0a]/30 shadow-[0_0_80px_rgba(20,107,10,0.15)]">
             {/* Elegant lighting glow */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(20,107,10,0.2)_0%,transparent_60%)] pointer-events-none" />
             
@@ -945,14 +954,6 @@ export default function Home() {
                   <span className="relative z-10">Request Proposal</span>
                   <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-2 relative z-10" />
                   <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] pointer-events-none" />
-                </motion.button>
-                
-                <motion.button
-                  whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-transparent border border-white/20 text-white px-12 py-6 rounded-full font-black uppercase tracking-[0.2em] text-sm transition-all duration-300 hover:border-white/40 backdrop-blur-md"
-                >
-                  Schedule Consultation
                 </motion.button>
               </div>
             </div>
