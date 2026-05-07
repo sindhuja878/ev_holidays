@@ -676,22 +676,22 @@ const DestinationAccordion = () => {
             initial={false}
             animate={{ 
               flex: expandedIndex === idx ? 4 : 1,
-              transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] }
+              transition: { duration: 0.5, ease: "easeOut" }
             }}
             onMouseEnter={() => setExpandedIndex(idx)}
-            className="relative h-full rounded-[2rem] overflow-hidden cursor-pointer group border border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_50px_rgba(20,107,10,0.2)] hover:-translate-y-1 transition-all duration-500"
+            className="relative h-full rounded-[2rem] overflow-hidden cursor-pointer group border border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_50px_rgba(20,107,10,0.2)] transition-all duration-300"
           >
             <img 
               src={dest.img} 
               alt={dest.name} 
               className={cn(
-                "absolute inset-0 w-full h-full object-cover transition-transform duration-[4s] ease-out brightness-[0.75] contrast-110",
+                "absolute inset-0 w-full h-full object-cover transition-transform duration-1000 ease-out brightness-[0.75] contrast-110",
                 expandedIndex === idx ? "scale-105" : "scale-125 group-hover:scale-115"
               )}
               referrerPolicy="no-referrer"
             />
             <div className={cn(
-              "absolute inset-0 transition-opacity duration-1000",
+              "absolute inset-0 transition-opacity duration-500",
               expandedIndex === idx ? "bg-gradient-to-t from-black/90 via-black/30 to-transparent" : "bg-black/60 group-hover:bg-black/40"
             )} />
 
@@ -715,10 +715,10 @@ const DestinationAccordion = () => {
             <div className="absolute inset-x-0 bottom-0 p-8 md:p-14 flex flex-col items-start overflow-hidden pointer-events-none">
                <motion.div
                  animate={{ 
-                   y: expandedIndex === idx ? 0 : 60,
+                   y: expandedIndex === idx ? 0 : 40,
                    opacity: expandedIndex === idx ? 1 : 0
                  }}
-                 transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+                 transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
                  className="space-y-6"
                >
                  <div className="bg-[#146b0a] text-white px-5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] inline-block shadow-xl">
