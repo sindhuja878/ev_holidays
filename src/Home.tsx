@@ -437,10 +437,10 @@ const WhoWeAreSection = () => {
               whileInView={{ x: 0, opacity: 1 }}
               animate={{ y: [0, -10, 0] }}
               transition={{ delay: 0.2, y: { duration: 4, repeat: Infinity, ease: "easeInOut" } }}
-              className="absolute -top-10 left-4 lg:-left-8 bg-white/5 backdrop-blur-xl border border-white/10 p-6 md:p-8 rounded-2xl min-w-[180px] text-center z-20 shadow-[0_8px_32px_rgba(0,0,0,0.3)] hover:bg-white/10 hover:-translate-y-1 transition-all duration-500"
+              className="absolute -top-10 left-4 lg:-left-8 bg-white/95 backdrop-blur-xl border border-white/20 p-6 md:p-8 rounded-2xl min-w-[180px] text-center z-20 shadow-[0_20px_40px_rgba(0,0,0,0.4)] hover:-translate-y-1 transition-all duration-500"
             >
-              <div className="text-4xl font-black text-[#146b0a] mb-2 tracking-tighter drop-shadow-md">1500+</div>
-              <div className="text-[10px] font-black uppercase tracking-[0.2em] text-white/90">Trips Completed</div>
+              <div className="text-4xl font-black text-[#146b0a] mb-2 tracking-tighter drop-shadow-sm">1500+</div>
+              <div className="text-[10px] font-black uppercase tracking-[0.2em] text-[#010801]/70">Trips Completed</div>
             </motion.div>
 
             <motion.div 
@@ -448,10 +448,10 @@ const WhoWeAreSection = () => {
               whileInView={{ x: 0, opacity: 1 }}
               animate={{ y: [0, 8, 0] }}
               transition={{ delay: 0.4, y: { duration: 5, repeat: Infinity, ease: "easeInOut" } }}
-              className="absolute top-1/2 -right-6 lg:-right-12 -translate-y-1/2 bg-white/5 backdrop-blur-xl border border-white/10 p-6 md:p-8 rounded-2xl min-w-[180px] text-center z-20 shadow-[0_8px_32px_rgba(0,0,0,0.3)] hover:bg-white/10 hover:-translate-y-1 transition-all duration-500"
+              className="absolute top-1/2 -right-6 lg:-right-12 -translate-y-1/2 bg-white/95 backdrop-blur-xl border border-white/20 p-6 md:p-8 rounded-2xl min-w-[180px] text-center z-20 shadow-[0_20px_40px_rgba(0,0,0,0.4)] hover:-translate-y-1 transition-all duration-500"
             >
-              <div className="text-4xl font-black text-[#146b0a] mb-2 tracking-tighter drop-shadow-md">100%</div>
-              <div className="text-[10px] font-black uppercase tracking-[0.2em] text-white/90">Personalised</div>
+              <div className="text-4xl font-black text-[#146b0a] mb-2 tracking-tighter drop-shadow-sm">100%</div>
+              <div className="text-[10px] font-black uppercase tracking-[0.2em] text-[#010801]/70">Personalised</div>
             </motion.div>
 
             <motion.div 
@@ -459,10 +459,10 @@ const WhoWeAreSection = () => {
               whileInView={{ y: 0, opacity: 1 }}
               animate={{ y: [0, -6, 0] }}
               transition={{ delay: 0.6, y: { duration: 4.5, repeat: Infinity, ease: "easeInOut" } }}
-              className="absolute -bottom-10 -left-6 bg-white/5 backdrop-blur-xl border border-white/10 p-6 md:p-8 rounded-2xl min-w-[180px] text-center z-20 shadow-[0_8px_32px_rgba(0,0,0,0.3)] hover:bg-white/10 hover:-translate-y-1 transition-all duration-500"
+              className="absolute -bottom-10 -left-6 bg-white/95 backdrop-blur-xl border border-white/20 p-6 md:p-8 rounded-2xl min-w-[180px] text-center z-20 shadow-[0_20px_40px_rgba(0,0,0,0.4)] hover:-translate-y-1 transition-all duration-500"
             >
-              <div className="text-4xl font-black text-[#146b0a] mb-2 tracking-tighter drop-shadow-md">500+</div>
-              <div className="text-[10px] font-black uppercase tracking-[0.2em] text-white/90">Happy Customers</div>
+              <div className="text-4xl font-black text-[#146b0a] mb-2 tracking-tighter drop-shadow-sm">500+</div>
+              <div className="text-[10px] font-black uppercase tracking-[0.2em] text-[#010801]/70">Happy Customers</div>
             </motion.div>
           </div>
 
