@@ -607,25 +607,36 @@ const DestinationAccordion = () => {
   ];
 
   return (
-    <section id="destinations-accordion" className="py-24 md:py-32 bg-brand-dark-sky overflow-hidden relative">
-      {/* Dark Green Block Background Container */}
-      <div className="absolute inset-0 m-4 md:m-8 rounded-[3rem] bg-gradient-to-br from-[#021a02] to-[#010801] border border-white/5 shadow-2xl z-0" />
+    <section id="destinations-accordion" className="py-24 md:py-32 overflow-hidden relative w-full">
+      {/* Premium Cinematic Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?auto=format&fit=crop&q=80&w=2000" 
+          alt="Cinematic Luxury Background" 
+          className="w-full h-full object-cover opacity-40 scale-105"
+          referrerPolicy="no-referrer"
+        />
+        {/* Dark overlay with emerald glow */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#010801]/95 via-[#021a02]/85 to-[#010801]/95" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(20,107,10,0.15)_0%,transparent_70%)] pointer-events-none" />
+      </div>
       
-      <div className="container mx-auto px-6 mb-16 relative z-10">
+      <div className="w-full px-6 md:px-12 lg:px-20 mb-16 relative z-10">
         <motion.div
            initial={{ opacity: 0, y: 20 }}
            whileInView={{ opacity: 1, y: 0 }}
            viewport={{ once: true }}
+           transition={{ duration: 1, ease: "easeOut" }}
         >
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 md:gap-0">
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-px bg-brand-gold-end" />
-                <span className="text-[11px] font-black uppercase tracking-[0.4em] text-brand-gold-end">Curated Escapes</span>
+                <div className="w-12 h-px bg-[#146b0a]" />
+                <span className="text-[11px] font-black uppercase tracking-[0.4em] text-[#146b0a]">Curated Escapes</span>
               </div>
               <h2 className="text-4xl md:text-7xl font-bold text-white tracking-tight leading-[0.9]">
                 Define the Destination.<br />
-                <span className="font-serif italic serif gold-text font-normal text-3xl md:text-5xl lg:text-6xl block mt-4">EV Holidays Will Craft the Experience.</span>
+                <span className="font-serif italic serif gold-text font-normal text-3xl md:text-5xl lg:text-6xl block mt-4 drop-shadow-lg">EV Holidays Will Craft the Experience.</span>
               </h2>
             </div>
             
@@ -635,40 +646,40 @@ const DestinationAccordion = () => {
             >
               <Link 
                 to="/destinations" 
-                className="inline-flex items-center gap-3 bg-white/5 hover:bg-white/10 border border-white/20 px-8 py-4 rounded-full text-[10px] font-black uppercase tracking-[0.2em] text-white transition-all backdrop-blur-sm group shadow-xl"
+                className="inline-flex items-center gap-3 bg-white/5 hover:bg-white/10 border border-white/20 px-8 py-4 rounded-full text-[10px] font-black uppercase tracking-[0.2em] text-white transition-all backdrop-blur-md group shadow-[0_8px_32px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_32px_rgba(20,107,10,0.2)]"
               >
                 View All Destinations
-                <ArrowRight className="w-4 h-4 text-brand-gold-end group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 text-[#146b0a] group-hover:translate-x-1 transition-transform" />
               </Link>
             </motion.div>
           </div>
         </motion.div>
       </div>
 
-      <div className="flex flex-col lg:flex-row h-[700px] lg:h-[650px] gap-3 px-6 max-w-[1600px] mx-auto relative z-10">
+      <div className="flex flex-col lg:flex-row h-[700px] lg:h-[650px] gap-4 w-full px-4 md:px-8 lg:px-12 mx-auto relative z-10">
         {destinations.map((dest, idx) => (
           <motion.div
             key={idx}
             initial={false}
             animate={{ 
               flex: expandedIndex === idx ? 4 : 1,
-              transition: { duration: 1, ease: [0.16, 1, 0.3, 1] }
+              transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] }
             }}
             onMouseEnter={() => setExpandedIndex(idx)}
-            className="relative h-full rounded-[2.5rem] overflow-hidden cursor-pointer group border border-white/5"
+            className="relative h-full rounded-[2rem] overflow-hidden cursor-pointer group border border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_50px_rgba(20,107,10,0.2)] hover:-translate-y-1 transition-all duration-500"
           >
             <img 
               src={dest.img} 
               alt={dest.name} 
               className={cn(
-                "absolute inset-0 w-full h-full object-cover transition-transform duration-[3s]",
-                expandedIndex === idx ? "scale-105" : "scale-125"
+                "absolute inset-0 w-full h-full object-cover transition-transform duration-[4s] ease-out brightness-[0.75] contrast-110",
+                expandedIndex === idx ? "scale-105" : "scale-125 group-hover:scale-115"
               )}
               referrerPolicy="no-referrer"
             />
             <div className={cn(
               "absolute inset-0 transition-opacity duration-1000",
-              expandedIndex === idx ? "bg-black/10" : "bg-black/50 group-hover:bg-black/40"
+              expandedIndex === idx ? "bg-gradient-to-t from-black/90 via-black/30 to-transparent" : "bg-black/60 group-hover:bg-black/40"
             )} />
 
             {/* Vertical Title (when collapsed) */}
@@ -680,7 +691,7 @@ const DestinationAccordion = () => {
                   exit={{ opacity: 0 }}
                   className="absolute inset-0 flex items-center justify-center pointer-events-none"
                 >
-                   <span className="text-white/60 font-black uppercase tracking-[0.6em] text-[10px] [writing-mode:vertical-lr] rotate-180 whitespace-nowrap">
+                   <span className="text-white/60 font-black uppercase tracking-[0.6em] text-[10px] [writing-mode:vertical-lr] rotate-180 whitespace-nowrap drop-shadow-md">
                      {dest.name}
                    </span>
                 </motion.div>
@@ -697,7 +708,7 @@ const DestinationAccordion = () => {
                  transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
                  className="space-y-6"
                >
-                 <div className="bg-brand-gold-end text-black px-5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] inline-block shadow-xl">
+                 <div className="bg-[#146b0a] text-white px-5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] inline-block shadow-xl">
                     {dest.location}
                  </div>
                  <h3 className="text-4xl md:text-6xl font-bold text-white tracking-tighter drop-shadow-2xl">{dest.name}</h3>
