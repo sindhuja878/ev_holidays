@@ -13,11 +13,12 @@ export const Footer = () => {
               <img 
                 src="/logo.png" 
                 alt="EV Holidays Logo" 
-                className="h-8 w-auto object-contain"
+                className="h-8 md:h-10 w-auto object-contain"
+                referrerPolicy="no-referrer"
               />
-              <div className="flex flex-col text-white">
-                <span className="text-lg font-extrabold tracking-tighter">EV<span className="gold-text">HOLIDAYS</span></span>
-              </div>
+              <span className="logo-text logo-glow text-xl">
+                EV Holidays
+              </span>
             </Link>
             <p className="text-sm text-text-muted leading-relaxed max-w-xs">
               Transforming corporate travel into meaningful experiences through meticulously planned journeys across 12+ global destinations.
@@ -44,7 +45,9 @@ export const Footer = () => {
                 { name: 'Annual Planner Trips' },
                 { name: 'Corporate Gifting' },
                 { name: 'MICE Events' },
-                { name: 'Team Outings' }
+                { name: 'Team Outings' },
+                { name: 'Family Trip Planner' },
+                { name: 'Couple Trips' }
               ].map(link => (
                 <li key={link.name}>
                   <span className="text-sm text-text-muted">{link.name}</span>
@@ -54,9 +57,13 @@ export const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-bold text-lg mb-6 text-white">Trending</h4>
+            <h4 className="font-bold text-lg mb-6 text-white">Countries We Operate In</h4>
             <ul className="space-y-4">
-              {['Maldives', 'Vietnam', 'Rajasthan', 'Singapore', 'Bali'].map(link => (
+              {[
+                'Gulf Countries', 'Singapore', 'Malaysia', 'Thailand', 
+                'Vietnam', 'Sri Lanka', 'Indonesia', 'Bali', 
+                'Nepal', 'Mauritius', 'Bhutan', 'Uzbekistan'
+              ].map(link => (
                 <li key={link}>
                   <a href="#" className="text-sm text-text-muted hover:text-white transition-colors">{link}</a>
                 </li>
