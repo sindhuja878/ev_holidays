@@ -69,15 +69,12 @@ export const Hero = () => {
           preload="metadata"
           className="w-full h-full object-cover"
         >
-          <source src="/video.mp4" type="video/mp4" />
+          <source src="/video44.mp4" type="video/mp4" />
         </video>
         
-        {/* Cinematic Gradient Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-dark-sky via-brand-dark-sky/20 to-brand-dark-sky pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-dark-sky/60 via-brand-navy/30 to-brand-dark-sky/60 pointer-events-none" />
-        
-        {/* Lush Green Glow Overlay */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,197,94,0.15)_0%,transparent_70%)] pointer-events-none mix-blend-overlay" />
+        {/* Subtle Gradient Overlays for Readability without darkening the video too much */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/60 pointer-events-none" />
+        <div className="absolute inset-0 bg-black/10 pointer-events-none" />
       </div>
 
       {/* Hero Content */}
