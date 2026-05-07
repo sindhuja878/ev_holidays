@@ -215,27 +215,27 @@ const TestimonialCarousel = () => {
       role: "Digital Nomad",
       destination: "Bali, Indonesia",
       category: "Solo",
-      categoryColor: "bg-brand-gold-end",
+      categoryColor: "bg-[#146b0a]",
       comment: "As a solo traveler, I appreciate the safety and curated local experiences EV Holidays provided. It felt truly personalized and authentic.",
-      avatar: "https://picsum.photos/seed/markd/200/200"
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400"
     },
     {
       name: "Rahul Mehta",
       role: "Corporate Strategy Head",
       destination: "Global Tech Solutions",
       category: "Corporate",
-      categoryColor: "bg-brand-navy",
+      categoryColor: "bg-[#146b0a]",
       comment: "EV Holidays transformed our annual retreat into a seamless experience. Every detail from logistics to luxury stays was handled with precision and care.",
-      avatar: "https://picsum.photos/seed/rahulm/200/200"
+      avatar: "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=400"
     },
     {
       name: "Sarah Jenkins",
       role: "HR Director",
       destination: "Global Tech",
       category: "Retreat",
-      categoryColor: "bg-brand-gold-end",
+      categoryColor: "bg-[#146b0a]",
       comment: "The team retreat in Vietnam was flawlessly organized. Every detail from the luxury stay to the team-building activities was perfect.",
-      avatar: "https://picsum.photos/seed/sj/200/200"
+      avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400"
     }
   ];
 
@@ -245,50 +245,58 @@ const TestimonialCarousel = () => {
   const item = testimonials[index];
 
   return (
-    <div className="max-w-5xl mx-auto relative px-4 md:px-20">
-      <div className="relative py-10 min-h-[400px] flex items-center">
+    <div className="max-w-6xl mx-auto relative px-4 md:px-12 lg:px-20">
+      <div className="relative py-12 min-h-[450px] flex items-center justify-center">
         <AnimatePresence mode="wait">
           <motion.div
             key={index}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className="w-full"
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 1.05, y: -20 }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full relative z-10"
           >
-            <div className="bg-brand-navy/60 border border-white/5 p-8 md:p-16 rounded-[3rem] relative backdrop-blur-xl shadow-2xl flex flex-col md:flex-row items-center md:items-start gap-10">
+            <div className="bg-[#021a02]/40 backdrop-blur-3xl border border-[#146b0a]/30 p-10 md:p-16 lg:p-20 rounded-[3rem] md:rounded-[4rem] relative shadow-[0_30px_60px_rgba(0,0,0,0.6)] flex flex-col md:flex-row items-center md:items-start gap-12 group hover:shadow-[0_40px_80px_rgba(20,107,10,0.2)] transition-shadow duration-700">
+              
+              {/* Subtle animated border highlight */}
+              <div className="absolute inset-0 rounded-[3rem] md:rounded-[4rem] border border-white/5 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#146b0a]/10 to-transparent rounded-[3rem] md:rounded-[4rem] pointer-events-none opacity-50" />
+
               {/* Avatar with Badge */}
-              <div className="relative shrink-0">
-                <div className="w-32 h-32 md:w-44 md:h-44 rounded-full overflow-hidden border-4 border-white/10 shadow-2xl">
-                  <img src={item.avatar} alt={item.name} className="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700" referrerPolicy="no-referrer" />
-                </div>
+              <div className="relative shrink-0 z-20">
+                <motion.div 
+                  whileHover={{ scale: 1.05 }}
+                  className="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-[#146b0a]/50 shadow-[0_0_30px_rgba(20,107,10,0.3)]"
+                >
+                  <img src={item.avatar} alt={item.name} className="w-full h-full object-cover transition-all duration-700" referrerPolicy="no-referrer" />
+                </motion.div>
                 <div className={cn(
-                  "absolute -bottom-2 right-2 px-4 py-1.5 rounded-full shadow-lg border border-white/10",
+                  "absolute -bottom-4 right-4 px-6 py-2 rounded-full shadow-2xl border border-white/20",
                   item.categoryColor
                 )}>
-                   <span className="text-[10px] font-black uppercase tracking-widest text-white">{item.category}</span>
+                   <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white drop-shadow-md">{item.category}</span>
                 </div>
               </div>
 
               {/* Content */}
-              <div className="flex-1 text-center md:text-left">
-                <div className="flex justify-center md:justify-start gap-1 mb-6">
+              <div className="flex-1 text-center md:text-left relative z-20 pt-4">
+                <div className="flex justify-center md:justify-start gap-1.5 mb-8">
                   {[...Array(5)].map((_, star) => (
-                    <Star key={star} className="w-5 h-5 fill-brand-gold-end text-brand-gold-end" />
+                    <Star key={star} className="w-5 h-5 md:w-6 md:h-6 fill-[#146b0a] text-[#146b0a] drop-shadow-[0_0_8px_rgba(20,107,10,0.6)]" />
                   ))}
                 </div>
                 
-                <h3 className="text-xl md:text-3xl text-white/90 leading-snug font-medium italic mb-10 relative">
+                <h3 className="text-2xl md:text-4xl text-white/95 leading-relaxed font-serif italic mb-12 relative tracking-wide">
                   &ldquo;{item.comment}&rdquo;
-                  <Quote className="absolute -top-10 -right-4 md:-right-10 w-24 h-24 text-white/5 pointer-events-none" />
+                  <Quote className="absolute -top-12 -left-6 md:-left-12 w-32 h-32 text-[#146b0a]/10 pointer-events-none" />
                 </h3>
 
-                <div className="space-y-2 pt-6 border-t border-white/5">
-                  <h4 className="text-white font-serif text-2xl tracking-tight">{item.name}</h4>
+                <div className="space-y-3 pt-8 border-t border-white/10">
+                  <h4 className="text-white font-sans font-bold text-xl md:text-2xl tracking-tight uppercase">{item.name}</h4>
                   <div className="flex flex-wrap justify-center md:justify-start items-center gap-3">
-                    <span className="text-brand-gold-end text-[11px] font-black uppercase tracking-[0.15em]">{item.role}</span>
+                    <span className="text-[#146b0a] text-[11px] font-black uppercase tracking-[0.2em]">{item.role}</span>
                     <span className="text-white/20 text-xs font-light">|</span>
-                    <span className="text-brand-gold-end text-[11px] font-black uppercase tracking-[0.15em]">{item.destination}</span>
+                    <span className="text-white/60 text-[11px] font-black uppercase tracking-[0.2em]">{item.destination}</span>
                   </div>
                 </div>
               </div>
@@ -296,30 +304,30 @@ const TestimonialCarousel = () => {
           </motion.div>
         </AnimatePresence>
 
-        {/* Navigation Buttons - Positioned relative to the card container */}
+        {/* Navigation Buttons */}
         <button 
           onClick={prev}
-          className="absolute -left-2 md:-left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/5 hover:bg-white/10 text-white flex items-center justify-center transition-all border border-white/10 z-30 group backdrop-blur-md"
+          className="absolute left-0 md:left-4 top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-black/40 hover:bg-[#146b0a] text-white flex items-center justify-center transition-all duration-300 border border-white/10 hover:border-[#146b0a] z-30 backdrop-blur-md shadow-xl"
         >
-          <ChevronRight className="w-5 h-5 rotate-180 opacity-60 group-hover:opacity-100 transition-opacity" />
+          <ChevronRight className="w-6 h-6 rotate-180 transition-transform" />
         </button>
         <button 
           onClick={next}
-          className="absolute -right-2 md:-right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/5 hover:bg-white/10 text-white flex items-center justify-center transition-all border border-white/10 z-30 group backdrop-blur-md"
+          className="absolute right-0 md:right-4 top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-black/40 hover:bg-[#146b0a] text-white flex items-center justify-center transition-all duration-300 border border-white/10 hover:border-[#146b0a] z-30 backdrop-blur-md shadow-xl"
         >
-          <ChevronRight className="w-5 h-5 opacity-60 group-hover:opacity-100 transition-opacity" />
+          <ChevronRight className="w-6 h-6 transition-transform" />
         </button>
       </div>
 
-      {/* Dots */}
-      <div className="flex justify-center gap-2 mt-4">
+      {/* Progress Indicators */}
+      <div className="flex justify-center gap-3 mt-8">
         {testimonials.map((_, i) => (
           <button
             key={i}
             onClick={() => setIndex(i)}
             className={cn(
-              "h-1.5 transition-all duration-500 rounded-full",
-              index === i ? "w-8 bg-brand-gold-end" : "w-1.5 bg-white/20"
+              "transition-all duration-500 rounded-full",
+              i === index ? "w-12 h-1.5 bg-[#146b0a] shadow-[0_0_10px_rgba(20,107,10,0.5)]" : "w-2 h-1.5 bg-white/20 hover:bg-white/40"
             )}
           />
         ))}
@@ -854,36 +862,49 @@ export default function Home() {
 
 
       {/* --- TESTIMONIALS --- */}
-      <section id="testimonials" className="py-32 relative overflow-hidden">
-        {/* Seashore Background Image */}
+      <section id="testimonials" className="py-40 relative overflow-hidden bg-[#010801]">
+        {/* Cinematic Layered Background */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&q=80&w=2000" 
-            alt="Seashore aerial view" 
-            className="w-full h-full object-cover"
+            src="https://images.unsplash.com/photo-1542224566-6e85f2e6772f?auto=format&fit=crop&q=80&w=2000" 
+            alt="Cinematic forest lake night ambience" 
+            className="w-full h-full object-cover opacity-50 scale-105"
             referrerPolicy="no-referrer"
           />
-          {/* Cinematic Dark Overlay - Ensures text readability while showing the seashore */}
-          <div className="absolute inset-0 bg-brand-dark-sky/85 mix-blend-multiply" />
-          <div className="absolute inset-0 bg-gradient-to-b from-brand-dark-sky via-transparent to-brand-dark-sky opacity-90" />
+          {/* Depth Fog and Overlays */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#010801] via-[#021a02]/60 to-[#010801] mix-blend-multiply" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#010801] via-transparent to-transparent opacity-90" />
+          {/* Elegant emerald glow diffusion */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(20,107,10,0.2)_0%,transparent_60%)] pointer-events-none" />
         </div>
-
-        {/* Colorful Glow Elements */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-gold-end/20 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/3 z-1" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brand-deep-blue/30 rounded-full blur-[140px] translate-y-1/2 -translate-x-1/3 z-1" />
         
         <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-20">
+          <div className="text-center mb-24 max-w-4xl mx-auto">
             <motion.span 
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              className="text-brand-gold-end font-extrabold uppercase tracking-[0.3em] text-[10px] mb-4 block"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-[#146b0a] font-black uppercase tracking-[0.4em] text-[11px] mb-6 block drop-shadow-lg"
             >
-              WHAT OUR CLIENTS SAY
+              CLIENT EXPERIENCES
             </motion.span>
-            <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-white">
-              Stories of <span className="gold-text italic serif font-normal">Meaningful</span> Journeys
-            </h2>
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1, duration: 0.8 }}
+              className="text-5xl md:text-7xl font-extrabold tracking-tight text-white leading-tight drop-shadow-2xl"
+            >
+              Stories of <span className="font-serif italic text-[#146b0a] font-normal px-2 relative inline-block">
+                Meaningful
+                <motion.div 
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  transition={{ duration: 1, delay: 0.5 }}
+                  className="absolute -bottom-2 left-0 right-0 h-[3px] bg-[#146b0a] origin-left rounded-full shadow-[0_0_15px_rgba(20,107,10,0.8)]"
+                />
+              </span> Journeys
+            </motion.h2>
           </div>
 
           <TestimonialCarousel />
@@ -891,32 +912,49 @@ export default function Home() {
       </section>
 
       {/* --- CTA SECTION --- */}
-      <section className="py-24 bg-brand-dark-sky px-6">
+      <section className="py-40 bg-[#010801] relative overflow-hidden">
+        {/* Subtle background particles / glow */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(20,107,10,0.1)_0%,transparent_70%)] pointer-events-none" />
+        
         <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="container mx-auto max-w-6xl bg-brand-navy/80 backdrop-blur-2xl rounded-[4rem] p-12 md:p-20 relative overflow-hidden text-center border border-white/5 shadow-[0_0_50px_rgba(0,0,0,0.5)]"
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="container mx-auto max-w-7xl px-6 relative z-10"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-brand-gold-end/10 to-transparent pointer-events-none" />
-          
-          <div className="relative z-10 max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-8 leading-tight tracking-tight">
-              Ready to <span className="gold-text">Elevate</span> Your Team's Journey?
-            </h2>
-            <p className="text-text-muted text-lg mb-12">
-              Join 500+ global organizations that trust EV Holidays for their incentive tours, retreats, and business travel.
-            </p>
-            <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setIsProposalModalOpen(true)}
-                className="gold-gradient text-black px-12 py-5 rounded-lg font-extrabold flex items-center gap-3 shadow-2xl shadow-brand-gold-end/20"
-              >
-                Request Proposal
-                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-              </motion.button>
+          <div className="bg-gradient-to-b from-[#021a02]/80 to-[#010801] backdrop-blur-3xl rounded-[4rem] md:rounded-[5rem] p-16 md:p-24 relative overflow-hidden text-center border border-[#146b0a]/30 shadow-[0_0_80px_rgba(20,107,10,0.15)]">
+            {/* Elegant lighting glow */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(20,107,10,0.2)_0%,transparent_60%)] pointer-events-none" />
+            
+            <div className="relative z-10 max-w-4xl mx-auto">
+              <h2 className="text-5xl md:text-7xl font-extrabold text-white mb-10 leading-[1.1] tracking-tight">
+                Ready to <span className="text-[#146b0a] font-serif italic font-normal">Elevate</span> Your<br/>Team's Journey?
+              </h2>
+              <p className="text-white/70 text-xl md:text-2xl mb-14 font-medium leading-relaxed max-w-3xl mx-auto">
+                From executive retreats to global incentive experiences, EV Holidays curates journeys designed to inspire teams, strengthen connections, and create lasting memories.
+              </p>
+              
+              <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setIsProposalModalOpen(true)}
+                  className="bg-[#146b0a] hover:bg-[#115a08] text-white px-12 py-6 rounded-full font-black uppercase tracking-[0.2em] text-sm flex items-center gap-4 shadow-[0_0_30px_rgba(20,107,10,0.4)] transition-all duration-300 group overflow-hidden relative"
+                >
+                  <span className="relative z-10">Request Proposal</span>
+                  <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-2 relative z-10" />
+                  <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] pointer-events-none" />
+                </motion.button>
+                
+                <motion.button
+                  whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-transparent border border-white/20 text-white px-12 py-6 rounded-full font-black uppercase tracking-[0.2em] text-sm transition-all duration-300 hover:border-white/40 backdrop-blur-md"
+                >
+                  Schedule Consultation
+                </motion.button>
+              </div>
             </div>
           </div>
         </motion.div>
