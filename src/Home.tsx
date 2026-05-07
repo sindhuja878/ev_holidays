@@ -743,38 +743,52 @@ export default function Home() {
       <DestinationAccordion />
 
       {/* --- SERVICES SECTION --- */}
-      <section id="services" className="py-32 relative overflow-hidden border-y border-white/5 bg-brand-dark-sky">
-        {/* Vibrant Background Landscape */}
+      <section id="services" className="py-32 relative overflow-hidden bg-[#010801] border-y border-white/5">
+        {/* Cinematic Background Landscape */}
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=2000" 
-            className="w-full h-full object-cover opacity-90" 
-            alt="Scenic Travel Destination" 
+            className="w-full h-full object-cover opacity-60 mix-blend-luminosity brightness-50" 
+            alt="Scenic Cinematic Destination" 
             referrerPolicy="no-referrer" 
           />
-          {/* Soft dark gradient to blend top/bottom and ensure text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-brand-dark-sky via-brand-dark-sky/40 to-brand-dark-sky" />
+          {/* Dark overlay & emerald haze */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#010801] via-[#021a02]/80 to-[#010801]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(20,107,10,0.1)_0%,transparent_80%)]" />
+          
+          {/* Ambient Motion Effects */}
+          <motion.div 
+            animate={{ opacity: [0.3, 0.6, 0.3], scale: [1, 1.1, 1] }}
+            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-1/4 right-1/4 w-[40rem] h-[40rem] bg-[#146b0a]/10 rounded-full blur-[120px] pointer-events-none"
+          />
+          <motion.div 
+            animate={{ opacity: [0.2, 0.5, 0.2], scale: [1, 1.2, 1] }}
+            transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+            className="absolute bottom-1/4 left-1/4 w-[50rem] h-[50rem] bg-[#0a1a0a]/40 rounded-full blur-[150px] pointer-events-none"
+          />
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-20">
+          <div className="text-center max-w-3xl mx-auto mb-24 relative">
             <motion.span 
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              className="text-brand-gold-end font-bold uppercase tracking-[0.2em] text-[11px] mb-4 block drop-shadow-lg"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="text-[#146b0a] font-black uppercase tracking-[0.4em] text-[11px] mb-6 block drop-shadow-lg"
             >
               OUR EXPERTISE
             </motion.span>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-5xl lg:text-[44px] leading-tight font-extrabold mb-6 tracking-tight text-white drop-shadow-2xl"
+              className="text-4xl md:text-5xl lg:text-[56px] leading-[1.1] font-bold mb-6 tracking-tight text-white drop-shadow-2xl"
             >
-              Bespoke Solutions for Every<br/>Corporate Need
+              Bespoke Solutions for Every<br/>
+              <span className="font-serif italic text-white/90 font-normal">Corporate Need.</span>
             </motion.h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-10">
             {[
               { id: "01", icon: Target, title: "End-to-End Planning", path: "#", desc: "Flights, hotels, transport, sightseeing — every single detail handled so you travel completely worry-free." },
               { id: "02", icon: Sparkles, title: "Personalised Itineraries", path: "#", desc: "No two trips are the same. Every journey is crafted around your preferences, budget, pace, and dreams." },
@@ -798,45 +812,53 @@ export default function Home() {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: idx * 0.1 }}
+                    transition={{ delay: idx * 0.1, duration: 0.8, ease: "easeOut" }}
                     onMouseMove={handleMouseMove}
-                    className="p-8 md:p-10 rounded-[2.5rem] shadow-2xl hover:shadow-[0_0_40px_rgba(0,0,0,0.6)] transition-all duration-500 relative overflow-hidden h-full flex flex-col bg-brand-navy/85 backdrop-blur-xl border border-white/10 group-hover:border-white/20"
+                    className="p-8 md:p-10 rounded-[2.5rem] shadow-[0_8px_32px_rgba(0,0,0,0.5)] group-hover:shadow-[0_16px_48px_rgba(20,107,10,0.2)] group-hover:-translate-y-2 transition-all duration-[600ms] ease-out relative overflow-hidden h-full flex flex-col bg-[#0a1a0a]/40 backdrop-blur-2xl border border-white/10 group-hover:bg-[#0a1a0a]/60 group-hover:border-white/20"
                   >
                     {/* Default subtle warm glow for the background */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent pointer-events-none" />
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_rgba(34,197,94,0.05),_transparent_60%)] pointer-events-none transition-opacity duration-500 group-hover:opacity-0" />
-
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent pointer-events-none" />
+                    
+                    {/* Interactive Spotlight */}
                     <motion.div
-                      className="pointer-events-none absolute -inset-px rounded-[2.5rem] transition duration-300 opacity-0 group-hover:opacity-100"
+                      className="pointer-events-none absolute -inset-px rounded-[2.5rem] transition duration-500 opacity-0 group-hover:opacity-100"
                       style={{
                         background: useMotionTemplate`
                           radial-gradient(
-                            500px circle at ${mouseX}px ${mouseY}px,
-                            rgba(34, 197, 94, 0.15),
-                            transparent 70%
+                            600px circle at ${mouseX}px ${mouseY}px,
+                            rgba(20, 107, 10, 0.15),
+                            transparent 80%
                           )
                         `,
                       }}
                     />
 
-                    <div className="flex justify-between items-start mb-6 relative z-10">
-                      <div className="w-14 h-14 bg-white/5 rounded-[1.1rem] flex items-center justify-center border border-white/5 group-hover:bg-brand-gold-end group-hover:border-brand-gold-end transition-all duration-500">
+                    <div className="flex justify-between items-start mb-8 relative z-10">
+                      {/* Premium Animated Icon Box */}
+                      <div className="relative w-16 h-16 flex items-center justify-center group-hover:-translate-y-1 transition-transform duration-[600ms] ease-out">
+                        <div className="absolute inset-0 bg-[#146b0a]/20 rounded-2xl blur-md group-hover:bg-[#146b0a]/40 transition-colors duration-500" />
+                        <div className="absolute inset-0 bg-white/5 border border-white/20 rounded-2xl backdrop-blur-md group-hover:border-[#146b0a]/50 transition-colors duration-500" />
+                        {/* Animated glowing ring on hover */}
+                        <div className="absolute -inset-1 rounded-[1.4rem] border border-[#146b0a]/0 group-hover:border-[#146b0a]/40 opacity-0 group-hover:opacity-100 transition-all duration-700" />
+                        
                         <motion.div
                           initial={{ scale: 1 }}
                           whileHover={{ 
-                            scale: 1.2, 
-                            rotate: [0, -10, 10, -5, 5, 0],
-                            filter: "drop-shadow(0 0 8px rgba(34, 197, 94, 0.6))"
+                            scale: 1.1,
+                            filter: "drop-shadow(0 0 10px rgba(20, 107, 10, 0.8))"
                           }}
-                          transition={{ type: "spring", stiffness: 300, damping: 10 }}
+                          transition={{ duration: 0.4 }}
                         >
-                          <service.icon className="text-white w-6 h-6 group-hover:text-black transition-colors" />
+                          <service.icon className="w-7 h-7 text-white/90 group-hover:text-[#146b0a] transition-colors duration-500 relative z-10" strokeWidth={1.5} />
                         </motion.div>
                       </div>
-                      <span className="text-4xl font-black text-white/5 group-hover:text-brand-gold-end/10 transition-colors duration-500">{service.id}</span>
+                      
+                      {/* Number Indicator */}
+                      <span className="text-5xl font-black text-white/[0.03] group-hover:text-[#146b0a]/10 transition-colors duration-700">{service.id}</span>
                     </div>
-                    <h3 className="text-xl font-bold mb-3 text-white transition-all duration-500 relative z-10 tracking-tight">{service.title}</h3>
-                    <p className="text-white/60 text-sm leading-relaxed relative z-10 font-medium flex-1 group-hover:text-white/80 transition-colors">{service.desc}</p>
+                    
+                    <h3 className="text-2xl font-bold mb-4 text-white transition-all duration-500 relative z-10 tracking-tight group-hover:text-white drop-shadow-md">{service.title}</h3>
+                    <p className="text-white/60 text-[15px] leading-relaxed relative z-10 font-medium flex-1 group-hover:text-white/80 transition-colors duration-500">{service.desc}</p>
                   </motion.div>
                 </Link>
               );
