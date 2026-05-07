@@ -76,24 +76,26 @@ export const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-brand-gold-end flex-shrink-0 mt-0.5" />
-                <span className="text-sm text-text-muted">Bangalore, India</span>
+                <span className="text-sm text-text-muted leading-relaxed">4/205, 1st Floor Kalai plaza,<br/>R Goundam Palayam, Rasipuram,<br/>Namakkal - 637408</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-brand-gold-end flex-shrink-0" />
-                <span className="text-sm text-text-muted">concierge@evholidays.com</span>
+                <span className="text-sm text-text-muted">planner@evholidays.in</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-brand-gold-end flex-shrink-0" />
-                <span className="text-sm text-text-muted">+91 98765 43210</span>
+                <span className="text-sm text-text-muted">+91-81488 20028</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-text-muted font-medium">
-            © 2026 EV Holidays Private Limited. All rights reserved.
-          </p>
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-4">
+          <div className="flex flex-col text-xs text-text-muted font-medium gap-1.5">
+            <p>© 2026 EV Holidays Private Limited. All rights reserved.</p>
+            <p className="text-[10px] opacity-80">( இவி ஹாலிடேஸ் (பி) லிமிட்டெட் )</p>
+            <p className="text-[10px] opacity-80 uppercase tracking-wider">CIN : U79110TZ2025PTC035152</p>
+          </div>
           <div className="flex gap-8">
             <a href="#" className="text-[10px] font-bold uppercase tracking-widest text-text-muted hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="text-[10px] font-bold uppercase tracking-widest text-text-muted hover:text-white transition-colors">Terms of Service</a>
