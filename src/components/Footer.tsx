@@ -13,7 +13,7 @@ export const Footer = () => {
               <img 
                 src="/logo11.png" 
                 alt="EV Holidays Logo" 
-                className="h-12 md:h-16 w-auto object-contain"
+                className="h-16 md:h-20 w-auto object-contain"
                 referrerPolicy="no-referrer"
               />
               <div className="flex flex-col">
