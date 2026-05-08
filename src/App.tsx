@@ -10,6 +10,7 @@ import TeamOutings from './pages/TeamOutings';
 import Destinations from './pages/Destinations';
 import { Layout } from './components/Layout';
 import { AIPopup } from './components/AIPopup';
+import SoulDestination from './pages/SoulDestination';
 
 
 export default function App() {
@@ -27,6 +28,7 @@ export default function App() {
         <Route path="/services/mice-events" element={<Layout><MiceEvents /></Layout>} />
         <Route path="/services/team-outings" element={<Layout><TeamOutings /></Layout>} />
         <Route path="/destinations" element={<Layout><Destinations /></Layout>} />
+        <Route path="/soul-destination" element={<SoulDestination />} />
       </Routes>
     </BrowserRouter>
   );

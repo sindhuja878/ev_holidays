@@ -16,9 +16,14 @@ export const Footer = () => {
                 className="h-8 md:h-10 w-auto object-contain"
                 referrerPolicy="no-referrer"
               />
-              <span className="logo-text logo-glow text-xl">
-                EV Holidays
-              </span>
+              <div className="flex flex-col">
+                <span className="logo-text logo-glow text-xl">
+                  EV Holidays
+                </span>
+                <span className="text-white/50 leading-none -mt-1 md:-mt-2 text-lg md:text-xl text-center md:text-left transition-opacity hover:text-white/70" style={{ fontFamily: '"Brittany Signature", "Great Vibes", cursive', fontWeight: 400 }}>
+                  Your Experience beyond Imagination
+                </span>
+              </div>
             </Link>
             <p className="text-sm text-text-muted leading-relaxed max-w-xs">
               Transforming corporate travel into meaningful experiences through meticulously planned journeys across 12+ global destinations.
