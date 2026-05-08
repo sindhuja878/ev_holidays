@@ -11,7 +11,7 @@ export const Footer = () => {
           <div className="space-y-6">
             <Link to="/" className="flex items-center gap-2">
               <img 
-                src="/logo.png" 
+                src="/logo11.png" 
                 alt="EV Holidays Logo" 
                 className="h-12 md:h-16 w-auto object-contain"
                 referrerPolicy="no-referrer"

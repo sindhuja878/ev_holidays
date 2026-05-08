@@ -46,7 +46,7 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 md:gap-3">
           <img 
-            src="/logo.png" 
+            src="/logo11.png" 
             alt="EV Holidays Logo" 
             className="h-12 md:h-16 w-auto object-contain"
             referrerPolicy="no-referrer"
