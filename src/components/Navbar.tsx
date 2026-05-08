@@ -40,15 +40,15 @@ export const Navbar = () => {
 
   return (
     <nav className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-8 py-6',
-        !isDarkBase ? 'bg-white/90 backdrop-blur-xl shadow-lg border-b border-gray-100 py-4' : 'bg-transparent'
-      )}>
+      'fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-8 py-6',
+      !isDarkBase ? 'bg-white/90 backdrop-blur-xl shadow-lg border-b border-gray-100 py-4' : 'bg-transparent'
+    )}>
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 md:gap-3">
-          <img 
-            src="/logo11.png" 
-            alt="EV Holidays Logo" 
-            className="h-16 md:h-20 w-auto object-contain"
+          <img
+            src="/logo_premium.png"
+            alt="EV Holidays Premium Logo"
+            className="h-16 md:h-24 w-auto object-contain drop-shadow-[0_0_15px_rgba(20,107,10,0.5)]"
             referrerPolicy="no-referrer"
           />
           <div className="flex flex-col">
@@ -70,8 +70,8 @@ export const Navbar = () => {
               onClick={(e) => handleNavClick(e, item.href)}
               className={cn(
                 "text-xs uppercase tracking-widest font-bold transition-all duration-500 hover:text-brand-gold-end",
-                isDarkBase 
-                  ? (item.name === 'Home' ? 'text-brand-gold-end' : 'text-white/80') 
+                isDarkBase
+                  ? (item.name === 'Home' ? 'text-brand-gold-end' : 'text-white/80')
                   : (item.name === 'Home' ? 'text-brand-navy' : 'text-brand-gold-end')
               )}
             >
@@ -84,8 +84,8 @@ export const Navbar = () => {
             onClick={() => navigate('/ai-planner')}
             className={cn(
               "px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-[0.2em] shadow-xl transition-all duration-500",
-              isDarkBase 
-                ? "bg-brand-gold-end text-brand-navy" 
+              isDarkBase
+                ? "bg-brand-gold-end text-brand-navy"
                 : "bg-brand-navy text-brand-gold-end"
             )}
           >
@@ -128,7 +128,7 @@ export const Navbar = () => {
                 </Link>
               ))}
               <div className="h-px bg-white/10 my-2" />
-              <button 
+              <button
                 onClick={() => {
                   navigate('/ai-planner');
                   setIsMobileMenuOpen(false);

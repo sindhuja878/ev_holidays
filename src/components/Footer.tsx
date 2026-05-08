@@ -10,10 +10,10 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
             <Link to="/" className="flex items-center gap-2">
-              <img 
-                src="/logo11.png" 
-                alt="EV Holidays Logo" 
-                className="h-16 md:h-20 w-auto object-contain"
+              <img
+                src="/logo_premium.png"
+                alt="EV Holidays Premium Logo"
+                className="h-16 md:h-24 w-auto object-contain drop-shadow-[0_0_15px_rgba(20,107,10,0.5)]"
                 referrerPolicy="no-referrer"
               />
               <div className="flex flex-col">
@@ -30,7 +30,7 @@ export const Footer = () => {
             </p>
             <div className="flex gap-4">
               {[Globe, Plane, MapPin].map((Icon, idx) => (
-                <motion.div 
+                <motion.div
                   key={idx}
                   whileHover={{ scale: 1.1, backgroundColor: 'rgba(255,255,255,0.1)', color: '#fff' }}
                   className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-text-muted transition-all cursor-pointer"
@@ -65,8 +65,8 @@ export const Footer = () => {
             <h4 className="font-bold text-lg mb-6 text-white">Countries We Operate In</h4>
             <ul className="space-y-4">
               {[
-                'Gulf Countries', 'Singapore', 'Malaysia', 'Thailand', 
-                'Vietnam', 'Sri Lanka', 'Indonesia', 'Bali', 
+                'Gulf Countries', 'Singapore', 'Malaysia', 'Thailand',
+                'Vietnam', 'Sri Lanka', 'Indonesia', 'Bali',
                 'Nepal', 'Mauritius', 'Bhutan', 'Uzbekistan'
               ].map(link => (
                 <li key={link}>
@@ -81,7 +81,7 @@ export const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-brand-gold-end flex-shrink-0 mt-0.5" />
-                <span className="text-sm text-text-muted leading-relaxed">4/205, 1st Floor Kalai plaza,<br/>R Goundam Palayam, Rasipuram,<br/>Namakkal - 637408</span>
+                <span className="text-sm text-text-muted leading-relaxed">4/205, 1st Floor Kalai plaza,<br />R Goundam Palayam, Rasipuram,<br />Namakkal - 637408</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-brand-gold-end flex-shrink-0" />
