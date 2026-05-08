@@ -48,7 +48,7 @@ export const Navbar = () => {
           <img 
             src="/logo.png" 
             alt="EV Holidays Logo" 
-            className="h-8 md:h-10 w-auto object-contain"
+            className="h-12 md:h-16 w-auto object-contain"
             referrerPolicy="no-referrer"
           />
           <div className="flex flex-col">
