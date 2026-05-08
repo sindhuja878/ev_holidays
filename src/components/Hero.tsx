@@ -129,19 +129,19 @@ export const Hero = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="relative min-h-[110vh] w-full flex flex-col items-center justify-center pt-32 pb-40 px-6 overflow-hidden bg-brand-dark-sky text-center hero-gradient">
+    <section className="relative min-h-[100vh] w-full flex flex-col items-center justify-center px-6 overflow-hidden bg-brand-dark-sky text-center hero-gradient pt-20">
       
       {/* Image Background Layer */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000"
-          alt="Snow Capped Mountains"
+          src="https://images.unsplash.com/photo-1542224566-6e85f2e6772f?auto=format&fit=crop&q=80&w=2000"
+          alt="Lush green forest stream"
           className="w-full h-full object-cover"
         />
         
         {/* Subtle Gradient Overlays for Readability without darkening the video too much */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/60 pointer-events-none" />
-        <div className="absolute inset-0 bg-black/10 pointer-events-none" />
+        <div className="absolute inset-0 bg-black/40 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/60 pointer-events-none" />
       </div>
 
       {/* Hero Content */}
@@ -150,60 +150,41 @@ export const Hero = () => {
            initial={{ opacity: 0, y: 30 }}
            animate={{ opacity: 1, y: 0 }}
            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+           className="flex flex-col items-center"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#2ECC71]/30 bg-black/40 backdrop-blur-md mb-8">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#2ECC71] animate-pulse" />
-            <span className="text-[#2ECC71] font-bold uppercase tracking-[0.2em] text-[10px]">
-              Trusted Travel Partner • Since Day One
-            </span>
-          </div>
-          <h1 className="text-5xl sm:text-7xl md:text-[92px] lg:text-[110px] font-normal leading-[0.85] tracking-[-0.04em] text-white">
-            <span className="font-sans font-black block">See The</span>
-            <span className="font-serif italic -mt-2 block">World,</span>
-            <span className="font-sans font-extralight opacity-80 block tracking-tight">Your Way.</span>
+          <h1 className="text-6xl sm:text-7xl md:text-[90px] lg:text-[110px] font-bold leading-[1.05] tracking-tight text-white drop-shadow-2xl">
+            <span className="font-sans block drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]">See the</span>
+            <span className="font-serif italic block font-normal drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]">World,</span>
+            <span className="font-sans block drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]">Your Way</span>
           </h1>
         </motion.div>
         
-        <motion.p 
+        <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="text-lg sm:text-xl max-w-3xl mt-10 leading-relaxed text-[#2ECC71] font-sans font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
+          className="text-base sm:text-lg md:text-xl max-w-4xl mt-10 leading-relaxed text-white font-sans font-medium drop-shadow-[0_4px_6px_rgba(0,0,0,0.8)] flex flex-col gap-1 items-center text-center"
         >
-          From the misty hills of Northeast India to the turquoise lagoons of the Maldives — EV Holidays crafts journeys that stay with you forever. Every detail. Every destination. Every dream.
-        </motion.p>
+          <p>From the misty hills of Northeast India to the turquoise lagoons of the Maldives,</p>
+          <p>EV Holidays crafts journeys that stay with you forever.</p>
+          <p>Every detail. Every destination. Every dream.</p>
+        </motion.div>
 
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="flex justify-center mt-12"
+          className="flex justify-center mt-10"
         >
           <button 
             onClick={() => navigate('/ai-planner')}
-            className="bg-[#2ECC71] text-[#010801] rounded-full px-12 py-5 text-sm font-black uppercase tracking-widest hover:scale-[1.05] active:scale-95 transition-all shadow-[0_0_30px_rgba(46,204,113,0.3)] flex items-center gap-3 relative overflow-hidden group"
+            className="bg-[#2ECC71] text-white rounded-full px-8 py-3.5 text-lg md:text-xl font-bold hover:scale-[1.05] active:scale-95 transition-all shadow-[0_4px_20px_rgba(46,204,113,0.4)] flex items-center gap-2 group"
           >
-            <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-            <span className="relative z-10 flex items-center gap-3">
-              PLAN WITH AI
-              <Sparkles className="w-4 h-4" />
-            </span>
+            <span>Plan with AI</span>
+            <Sparkles className="w-5 h-5" />
           </button>
         </motion.div>
-
-        {/* Integrated Hero Tabs */}
-        <HeroTabs />
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div 
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30"
-      >
-        <span className="text-[10px] uppercase font-bold tracking-widest text-white">Scroll</span>
-        <div className="w-px h-12 bg-gradient-to-b from-white to-transparent" />
-      </motion.div>
     </section>
   );
 };
