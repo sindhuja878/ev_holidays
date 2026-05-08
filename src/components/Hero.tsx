@@ -129,59 +129,89 @@ export const Hero = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="relative min-h-[100vh] w-full flex flex-col items-center justify-center px-6 overflow-hidden bg-brand-dark-sky text-center hero-gradient pt-20">
+    <section className="relative min-h-[100vh] w-full flex flex-col items-center justify-center px-6 overflow-hidden bg-[#010801] text-center pt-24">
       
-      {/* Image Background Layer */}
-      <div className="absolute inset-0 z-0">
-        <img
+      {/* Image Background Layer with Cinematic Motion */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <motion.img
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 15, ease: "easeOut" }}
           src="https://images.unsplash.com/photo-1542224566-6e85f2e6772f?auto=format&fit=crop&q=80&w=2000"
-          alt="Lush green forest stream"
-          className="w-full h-full object-cover"
+          alt="Lush green forest stream cinematic"
+          className="w-full h-full object-cover opacity-90"
         />
         
-        {/* Subtle Gradient Overlays for Readability without darkening the video too much */}
-        <div className="absolute inset-0 bg-black/40 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/60 pointer-events-none" />
+        {/* Cinematic Emerald & Dark Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-emerald-950/20 to-black/90 pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,transparent_0%,rgba(0,0,0,0.6)_100%)] pointer-events-none" />
+        
+        {/* Floating Ambient Particles */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {[...Array(20)].map((_, i) => (
+            <motion.div
+              key={`particle-${i}`}
+              className="absolute bg-white/30 rounded-full blur-[1px]"
+              style={{
+                width: Math.random() * 4 + 1 + 'px',
+                height: Math.random() * 4 + 1 + 'px',
+                top: Math.random() * 100 + '%',
+                left: Math.random() * 100 + '%',
+              }}
+              animate={{
+                y: [0, -60, 0],
+                x: [0, Math.random() * 30 - 15, 0],
+                opacity: [0, 0.6, 0],
+              }}
+              transition={{
+                duration: Math.random() * 6 + 6,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: Math.random() * 5,
+              }}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Hero Content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-center justify-center">
         <motion.div
-           initial={{ opacity: 0, y: 30 }}
-           animate={{ opacity: 1, y: 0 }}
-           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+           initial={{ opacity: 0, y: 40, scale: 0.95 }}
+           animate={{ opacity: 1, y: 0, scale: 1 }}
+           transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
            className="flex flex-col items-center"
         >
-          <h1 className="text-6xl sm:text-7xl md:text-[90px] lg:text-[110px] font-bold leading-[1.05] tracking-tight text-white drop-shadow-2xl">
-            <span className="font-sans block drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]">See the</span>
-            <span className="font-serif italic block font-normal drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]">World,</span>
-            <span className="font-sans block drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]">Your Way</span>
+          <h1 className="text-[12vw] sm:text-[90px] md:text-[110px] lg:text-[130px] font-bold leading-[1.0] tracking-tight text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+            <span className="font-sans block drop-shadow-2xl">See the</span>
+            <span className="font-serif italic block font-normal drop-shadow-2xl text-[#f4fcf6]">World,</span>
+            <span className="font-sans block drop-shadow-2xl">Your Way</span>
           </h1>
         </motion.div>
         
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="text-base sm:text-lg md:text-xl max-w-4xl mt-10 leading-relaxed text-white font-sans font-medium drop-shadow-[0_4px_6px_rgba(0,0,0,0.8)] flex flex-col gap-1 items-center text-center"
+          transition={{ duration: 1.5, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="text-base sm:text-lg md:text-2xl max-w-4xl mt-12 leading-relaxed text-white/95 font-sans font-medium drop-shadow-[0_4px_10px_rgba(0,0,0,0.9)] flex flex-col gap-2 items-center text-center"
         >
-          <p>From the misty hills of Northeast India to the turquoise lagoons of the Maldives,</p>
-          <p>EV Holidays crafts journeys that stay with you forever.</p>
-          <p>Every detail. Every destination. Every dream.</p>
+          <p>From the misty hills of Northeast India to the turquoise lagoons of Mauritius, EV Holidays crafts journeys that stay with you forever.</p>
+          <p className="text-white/70 mt-2 font-light tracking-wide">Every detail. Every destination. Every dream.</p>
         </motion.div>
 
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="flex justify-center mt-10"
+          initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{ duration: 1.2, delay: 1.0, ease: [0.16, 1, 0.3, 1] }}
+          className="flex justify-center mt-12"
         >
           <button 
             onClick={() => navigate('/ai-planner')}
-            className="bg-[#2ECC71] text-white rounded-full px-8 py-3.5 text-lg md:text-xl font-bold hover:scale-[1.05] active:scale-95 transition-all shadow-[0_4px_20px_rgba(46,204,113,0.4)] flex items-center gap-2 group"
+            className="relative group overflow-hidden bg-gradient-to-r from-[#2ECC71]/90 to-[#1e9650]/90 backdrop-blur-md border border-white/20 text-white rounded-full px-10 py-4 md:px-12 md:py-5 text-lg md:text-xl font-bold hover:scale-[1.02] active:scale-95 transition-all duration-500 shadow-[0_10px_40px_rgba(46,204,113,0.4)] hover:shadow-[0_15px_50px_rgba(46,204,113,0.6)] flex items-center gap-3"
           >
-            <span>Plan with AI</span>
-            <Sparkles className="w-5 h-5" />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:animate-[sweep_2.5s_ease-in-out_infinite]" />
+            <span className="relative z-10 tracking-wide drop-shadow-md">Plan with AI</span>
+            <Sparkles className="w-5 h-5 relative z-10 drop-shadow-md group-hover:rotate-12 transition-transform duration-300" />
           </button>
         </motion.div>
       </div>
