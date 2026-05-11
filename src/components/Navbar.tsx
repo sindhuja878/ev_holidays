@@ -40,10 +40,10 @@ export const Navbar = () => {
 
   return (
     <nav className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-8 py-6',
-        !isDarkBase ? 'bg-white/90 backdrop-blur-xl shadow-lg border-b border-gray-100 py-4' : 'bg-transparent shadow-[inset_0_80px_60px_-60px_rgba(0,0,0,0.5)]'
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-4 md:px-12 py-6',
+        isScrolled ? 'bg-black/80 backdrop-blur-2xl shadow-2xl py-4 border-b border-white/5' : 'bg-transparent shadow-[inset_0_80px_60px_-60px_rgba(0,0,0,0.5)]'
       )}>
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
+      <div className="w-full flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 md:gap-4 bg-black/40 backdrop-blur-md p-2 rounded-2xl border border-white/5 shadow-2xl transition-all hover:bg-black/60 group">
           <img 
             src="/logo.png" 
@@ -70,9 +70,7 @@ export const Navbar = () => {
               onClick={(e) => handleNavClick(e, item.href)}
               className={cn(
                 "text-xs uppercase tracking-widest font-bold transition-all duration-500 hover:text-brand-gold-end",
-                isDarkBase 
-                  ? (item.name === 'Home' ? 'text-brand-gold-end' : 'text-white/80') 
-                  : (item.name === 'Home' ? 'text-brand-navy' : 'text-brand-gold-end')
+                item.name === 'Home' ? 'text-brand-gold-end' : 'text-white/80'
               )}
             >
               {item.name}
@@ -83,10 +81,7 @@ export const Navbar = () => {
             whileTap={{ scale: 0.95 }}
             onClick={() => navigate('/ai-planner')}
             className={cn(
-              "px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-[0.2em] shadow-xl transition-all duration-500",
-              isDarkBase 
-                ? "bg-brand-gold-end text-brand-navy" 
-                : "bg-brand-navy text-brand-gold-end"
+              "px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-[0.2em] shadow-xl transition-all duration-500 bg-brand-gold-end text-brand-navy hover:shadow-brand-gold-end/20"
             )}
           >
             Plan Trip
@@ -96,9 +91,9 @@ export const Navbar = () => {
         {/* Mobile Toggle */}
         <button className="md:hidden p-2" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
           {isMobileMenuOpen ? (
-            <X className={isDarkBase ? "text-white" : "text-brand-navy"} />
+            <X className="text-white" />
           ) : (
-            <Menu className={isDarkBase ? "text-white" : "text-brand-navy"} />
+            <Menu className="text-white" />
           )}
         </button>
       </div>
