@@ -44,18 +44,18 @@ export const Navbar = () => {
         !isDarkBase ? 'bg-white/90 backdrop-blur-xl shadow-lg border-b border-gray-100 py-4' : 'bg-transparent shadow-[inset_0_80px_60px_-60px_rgba(0,0,0,0.5)]'
       )}>
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-4 md:gap-6 bg-black/40 backdrop-blur-md px-6 py-3 rounded-2xl border border-white/5 shadow-2xl transition-all hover:bg-black/60 group">
+        <Link to="/" className="flex items-center gap-3 md:gap-4 bg-black/40 backdrop-blur-md p-2 rounded-2xl border border-white/5 shadow-2xl transition-all hover:bg-black/60 group">
           <img 
             src="/logo.png" 
             alt="EV Holidays Logo" 
-            className="h-10 md:h-14 w-auto object-contain drop-shadow-md group-hover:scale-110 transition-transform"
+            className="h-14 md:h-24 w-auto object-contain drop-shadow-md group-hover:scale-105 transition-transform"
             referrerPolicy="no-referrer"
           />
-          <div className="flex flex-col">
-            <span className="logo-text logo-glow !text-white">
+          <div className="flex flex-col pr-4">
+            <span className="logo-text logo-glow !text-white text-xl md:text-3xl">
               EV Holidays
             </span>
-            <span className="text-white leading-none -mt-1 md:-mt-2 text-lg md:text-xl text-center md:text-left transition-opacity group-hover:text-white/90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" style={{ fontFamily: '"Brittany Signature", "Great Vibes", cursive', fontWeight: 400 }}>
+            <span className="text-white leading-none -mt-1 md:-mt-2 text-lg md:text-2xl text-center md:text-left transition-opacity group-hover:text-white/90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" style={{ fontFamily: '"Brittany Signature", "Great Vibes", cursive', fontWeight: 400 }}>
               Your Experience beyond Imagination
             </span>
           </div>
