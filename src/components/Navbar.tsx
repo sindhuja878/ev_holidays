@@ -44,7 +44,7 @@ export const Navbar = () => {
         isScrolled ? 'bg-black/80 backdrop-blur-2xl shadow-2xl py-4 border-b border-white/5' : 'bg-transparent shadow-[inset_0_80px_60px_-60px_rgba(0,0,0,0.5)]'
       )}>
       <div className="w-full flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3 md:gap-4 bg-black/40 backdrop-blur-md p-2 rounded-2xl border border-white/5 shadow-2xl transition-all hover:bg-black/60 group">
+        <Link to="/" className="flex items-center gap-3 md:gap-4 transition-all group">
           <img 
             src="/logo.png" 
             alt="EV Holidays Logo" 
