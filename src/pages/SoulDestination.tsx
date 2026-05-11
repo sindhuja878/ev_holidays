@@ -285,6 +285,7 @@ export default function SoulDestination() {
     whatsapp: '',
     travelers: '',
     month: '',
+    category: '', // New field for Economy/Luxury
     preferences: ''
   });
 
@@ -299,6 +300,7 @@ Email: ${formData.email || 'Not provided'}
 WhatsApp: ${formData.whatsapp || 'Not provided'}
 Travelers: ${formData.travelers || 'Not provided'}
 Preferred Month: ${formData.month || 'Not provided'}
+Preferences: ${formData.category || 'Not provided'}
 
 Auto-Filled Preferences:
 Suggested Destination: ${result.name}
@@ -306,7 +308,7 @@ Travel Style: ${answers[1]?.[0] || 'Luxury'}
 Preferred Duration: ${answers[3]?.[0] || '5-7 Days'}
 Journey Category: ${answers[4]?.[0] || 'International'}
 
-Additional Preferences:
+Description:
 ${formData.preferences || 'None provided'}`;
 
     window.location.href = `mailto:planner@evholidays.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
@@ -674,8 +676,21 @@ ${formData.preferences || 'None provided'}`;
                           <input type="text" value={formData.month} onChange={(e) => setFormData({...formData, month: e.target.value})} className="bg-black/50 border border-white/20 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-[#2ECC71] focus:bg-white/5 transition-all shadow-inner" placeholder="e.g. October" />
                         </div>
                       </div>
+                      <div className="flex flex-col gap-2">
+                        <label className="text-white/70 text-xs uppercase tracking-widest font-bold">Preferences</label>
+                        <select 
+                          value={formData.category} 
+                          onChange={(e) => setFormData({...formData, category: e.target.value})} 
+                          className="bg-black/50 border border-white/20 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-[#2ECC71] focus:bg-white/5 transition-all shadow-inner appearance-none cursor-pointer"
+                        >
+                          <option value="" disabled className="bg-black">Choose Option</option>
+                          <option value="Economy" className="bg-black">Economy</option>
+                          <option value="Luxury" className="bg-black">Luxury</option>
+                        </select>
+                      </div>
+
                       <div className="md:col-span-2 flex flex-col gap-2">
-                        <label className="text-white/70 text-xs uppercase tracking-widest font-bold">Additional Preferences</label>
+                        <label className="text-white/70 text-xs uppercase tracking-widest font-bold">Description Box</label>
                         <textarea value={formData.preferences} onChange={(e) => setFormData({...formData, preferences: e.target.value})} className="bg-black/50 border border-white/20 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-[#2ECC71] focus:bg-white/5 transition-all shadow-inner min-h-[100px]" placeholder="Any specific requirements or celebrations?"></textarea>
                       </div>
 
