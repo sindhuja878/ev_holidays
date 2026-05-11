@@ -44,21 +44,13 @@ export const Navbar = () => {
         isScrolled ? 'bg-black/80 backdrop-blur-2xl shadow-2xl py-4 border-b border-white/5' : 'bg-transparent shadow-[inset_0_80px_60px_-60px_rgba(0,0,0,0.5)]'
       )}>
       <div className="w-full flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3 md:gap-4 transition-all group">
+        <Link to="/" className="transition-all group">
           <img 
-            src="/logo.png" 
-            alt="EV Holidays Logo" 
-            className="h-14 md:h-24 w-auto object-contain drop-shadow-md group-hover:scale-105 transition-transform"
+            src="/logo11.png" 
+            alt="EV Holidays" 
+            className="h-20 md:h-32 w-auto object-contain drop-shadow-md group-hover:scale-105 transition-transform"
             referrerPolicy="no-referrer"
           />
-          <div className="flex flex-col pr-4">
-            <span className="logo-text logo-glow text-[#156d0a] text-xl md:text-3xl">
-              EV Holidays
-            </span>
-            <span className="text-white leading-none -mt-1 md:-mt-2 text-lg md:text-2xl text-center md:text-left transition-opacity group-hover:text-white/90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" style={{ fontFamily: '"Brittany Signature", "Great Vibes", cursive', fontWeight: 400 }}>
-              Your Experience beyond Imagination
-            </span>
-          </div>
         </Link>
 
         {/* Desktop Menu */}
