@@ -438,8 +438,8 @@ const WhoWeAreSection = () => {
             {/* Main Visual Frame */}
             <div className="relative aspect-[4/5] md:aspect-[5/6] rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10">
               <img 
-                src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&q=80&w=1200" 
-                alt="Longtail Boat Travel" 
+                src="/EV Side Slide 2543.png" 
+                alt="EV Side Slide" 
                 className="w-full h-full object-cover brightness-[0.7] contrast-110 group-hover:scale-105 transition-transform duration-[6s] ease-out"
                 referrerPolicy="no-referrer"
               />
