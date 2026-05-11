@@ -135,6 +135,7 @@ export const Hero = () => {
 
     // Initial autoplay attempt with sound
     video.muted = false;
+    video.loop = true;
     const playPromise = video.play();
     if (playPromise !== undefined) {
       playPromise.catch(() => {
