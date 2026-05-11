@@ -148,6 +148,7 @@ export const Hero = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           video.muted = false;
+          video.play().catch(() => {});
         } else {
           video.muted = true;
         }
