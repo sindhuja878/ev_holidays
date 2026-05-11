@@ -52,7 +52,7 @@ export const Navbar = () => {
             referrerPolicy="no-referrer"
           />
           <div className="flex flex-col pr-4">
-            <span className="logo-text logo-glow !text-white text-xl md:text-3xl">
+            <span className="logo-text logo-glow text-[#156d0a] text-xl md:text-3xl">
               EV Holidays
             </span>
             <span className="text-white leading-none -mt-1 md:-mt-2 text-lg md:text-2xl text-center md:text-left transition-opacity group-hover:text-white/90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" style={{ fontFamily: '"Brittany Signature", "Great Vibes", cursive', fontWeight: 400 }}>
