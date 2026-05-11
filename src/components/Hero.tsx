@@ -194,11 +194,26 @@ export const Hero = () => {
            animate={{ opacity: 1, y: 0 }}
            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#2ECC71]/30 bg-black/40 backdrop-blur-md mb-8">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#2ECC71] animate-pulse" />
-            <span className="text-[#2ECC71] font-bold uppercase tracking-[0.2em] text-[10px]">
-              Trusted Travel Partner • Since Day One
-            </span>
+          <div className="flex items-center gap-6 md:gap-10 mb-16 group">
+            <div className="bg-black/40 backdrop-blur-md p-3 rounded-[2.5rem] border border-white/5 shadow-2xl transition-all hover:bg-black/60">
+              <img 
+                src="/logo.png" 
+                alt="EV Holidays Logo" 
+                className="h-24 md:h-40 w-auto object-contain drop-shadow-md group-hover:scale-105 transition-transform"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+            <div className="flex flex-col text-left">
+              <h2 className="logo-text logo-glow !text-white text-5xl md:text-8xl font-black leading-none tracking-tighter uppercase">
+                EV
+              </h2>
+              <h2 className="logo-text logo-glow !text-white text-5xl md:text-8xl font-black leading-none tracking-tighter uppercase">
+                Holidays
+              </h2>
+              <p className="text-white leading-none mt-2 text-2xl md:text-5xl drop-shadow-[0_2px_15px_rgba(0,0,0,0.8)]" style={{ fontFamily: '"Brittany Signature", "Great Vibes", cursive', fontWeight: 400 }}>
+                Your Experience beyond Imagination
+              </p>
+            </div>
           </div>
           <h1 className="text-5xl sm:text-7xl md:text-[92px] lg:text-[110px] font-normal leading-[0.85] tracking-[-0.04em] text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
             <span className="font-sans font-black block">See The</span>
