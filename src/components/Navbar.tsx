@@ -40,38 +40,40 @@ export const Navbar = () => {
 
   return (
     <nav className={cn(
-      'fixed top-0 left-0 right-0 z-50 transition-all duration-700 px-6 md:px-12',
-      !isDarkBase ? 'bg-[#010801]/80 backdrop-blur-2xl shadow-[0_4px_30px_rgba(0,0,0,0.5)] border-b border-white/5 py-4' : 'bg-gradient-to-b from-black/80 to-transparent py-8'
-    )}>
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-8 py-6',
+        !isDarkBase ? 'bg-white/90 backdrop-blur-xl shadow-lg border-b border-gray-100 py-4' : 'bg-transparent shadow-[inset_0_80px_60px_-60px_rgba(0,0,0,0.5)]'
+      )}>
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3 group">
-          <div className="relative">
-            <div className="absolute inset-0 bg-[#2ECC71]/20 blur-[25px] rounded-full scale-[1.5] pointer-events-none group-hover:bg-[#2ECC71]/30 transition-all duration-700" />
-            <img
-              src="/logo_premium.png"
-              alt="EV Holidays Premium Logo"
-              className="h-16 md:h-24 w-auto object-contain drop-shadow-[0_0_15px_rgba(20,107,10,0.5)] relative z-10 transition-transform duration-700 group-hover:scale-105"
-              referrerPolicy="no-referrer"
-            />
-          </div>
-          <div className="flex flex-col opacity-0 md:opacity-100 transition-opacity duration-500">
-            <span className="logo-text text-[#2ECC71] drop-shadow-[0_0_10px_rgba(46,204,113,0.3)] font-black text-2xl md:text-3xl tracking-tight">
+        <Link to="/" className="flex items-center gap-4 md:gap-6 bg-black/40 backdrop-blur-md px-6 py-3 rounded-2xl border border-white/5 shadow-2xl transition-all hover:bg-black/60 group">
+          <img 
+            src="/logo.png" 
+            alt="EV Holidays Logo" 
+            className="h-10 md:h-14 w-auto object-contain drop-shadow-md group-hover:scale-110 transition-transform"
+            referrerPolicy="no-referrer"
+          />
+          <div className="flex flex-col">
+            <span className="logo-text logo-glow !text-white">
               EV Holidays
             </span>
-            <span className="text-white/70 leading-none -mt-1 md:-mt-2 text-lg md:text-xl transition-colors group-hover:text-white/90" style={{ fontFamily: '"Brittany Signature", "Great Vibes", cursive', fontWeight: 400 }}>
+            <span className="text-white leading-none -mt-1 md:-mt-2 text-lg md:text-xl text-center md:text-left transition-opacity group-hover:text-white/90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" style={{ fontFamily: '"Brittany Signature", "Great Vibes", cursive', fontWeight: 400 }}>
               Your Experience beyond Imagination
             </span>
           </div>
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-10">
+        <div className="hidden md:flex items-center gap-8">
           {menuItems.map((item) => (
             <Link
               key={item.name}
               to={item.href}
               onClick={(e) => handleNavClick(e, item.href)}
-              className="text-xs uppercase tracking-[0.15em] font-bold text-white/80 transition-all duration-500 hover:text-[#2ECC71] hover:drop-shadow-[0_0_8px_rgba(46,204,113,0.8)] relative after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-0 after:bg-[#2ECC71] after:transition-all after:duration-300 hover:after:w-full"
+              className={cn(
+                "text-xs uppercase tracking-widest font-bold transition-all duration-500 hover:text-brand-gold-end",
+                isDarkBase 
+                  ? (item.name === 'Home' ? 'text-brand-gold-end' : 'text-white/80') 
+                  : (item.name === 'Home' ? 'text-brand-navy' : 'text-brand-gold-end')
+              )}
             >
               {item.name}
             </Link>
@@ -80,18 +82,23 @@ export const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => navigate('/ai-planner')}
-            className="px-8 py-3.5 rounded-full text-[11px] font-black uppercase tracking-[0.2em] shadow-[0_4px_20px_rgba(46,204,113,0.2)] hover:shadow-[0_4px_25px_rgba(46,204,113,0.4)] transition-all duration-500 bg-[#2ECC71] text-[#010801]"
+            className={cn(
+              "px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-[0.2em] shadow-xl transition-all duration-500",
+              isDarkBase 
+                ? "bg-brand-gold-end text-brand-navy" 
+                : "bg-brand-navy text-brand-gold-end"
+            )}
           >
             Plan Trip
           </motion.button>
         </div>
 
         {/* Mobile Toggle */}
-        <button className="md:hidden p-2 relative z-10" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+        <button className="md:hidden p-2" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
           {isMobileMenuOpen ? (
-            <X className="text-white w-7 h-7" />
+            <X className={isDarkBase ? "text-white" : "text-brand-navy"} />
           ) : (
-            <Menu className="text-white w-7 h-7" />
+            <Menu className={isDarkBase ? "text-white" : "text-brand-navy"} />
           )}
         </button>
       </div>
@@ -100,12 +107,12 @@ export const Navbar = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, backdropFilter: "blur(0px)", y: -20 }}
-            animate={{ opacity: 1, backdropFilter: "blur(20px)", y: 0 }}
-            exit={{ opacity: 0, backdropFilter: "blur(0px)", y: -20 }}
-            className="md:hidden fixed inset-0 top-[88px] bg-[#010801]/95 border-t border-white/5"
+            initial={{ opacity: 0, scale: 0.95, y: -20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: -20 }}
+            className="md:hidden bg-brand-navy mt-4 rounded-3xl shadow-2xl overflow-hidden border border-white/10 backdrop-blur-3xl absolute top-full left-4 right-4"
           >
-            <div className="flex flex-col p-8 gap-8 items-center pt-20">
+            <div className="flex flex-col p-8 gap-6">
               {menuItems.map((item) => (
                 <Link
                   key={item.name}
@@ -114,18 +121,19 @@ export const Navbar = () => {
                     handleNavClick(e, item.href);
                     setIsMobileMenuOpen(false);
                   }}
-                  className="text-2xl font-black uppercase tracking-widest text-white/80 hover:text-[#2ECC71] transition-colors"
+                  className="text-lg font-black uppercase tracking-widest text-white/70 hover:text-brand-gold-end transition-colors flex items-center justify-between group"
                 >
                   {item.name}
+                  <ChevronRight className="w-5 h-5 opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all" />
                 </Link>
               ))}
-              <div className="w-12 h-px bg-[#2ECC71]/30 my-4" />
-              <button
+              <div className="h-px bg-white/10 my-2" />
+              <button 
                 onClick={() => {
                   navigate('/ai-planner');
                   setIsMobileMenuOpen(false);
                 }}
-                className="bg-[#2ECC71] text-[#010801] px-12 py-5 rounded-full font-black uppercase tracking-widest text-sm shadow-[0_0_30px_rgba(46,204,113,0.3)] w-full max-w-xs"
+                className="bg-brand-gold-end text-brand-navy py-5 rounded-2xl font-black uppercase tracking-widest text-sm shadow-xl"
               >
                 Plan Your Journey
               </button>
