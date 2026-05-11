@@ -130,16 +130,40 @@ export const Hero = () => {
   const videoRef = React.useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.muted = false;
-      const playPromise = videoRef.current.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          // If blocked, try to play muted first, but we want sound
-          // We'll leave it to the browser's autoplay policy
-        });
-      }
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Initial autoplay attempt with sound
+    video.muted = false;
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // Fallback or leave to browser policy
+      });
     }
+
+    // Mute audio when scrolled away using IntersectionObserver
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.muted = false;
+        } else {
+          video.muted = true;
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    const heroSection = video.closest('section');
+    if (heroSection) {
+      observer.observe(heroSection);
+    }
+
+    return () => {
+      if (heroSection) observer.unobserve(heroSection);
+      video.muted = true;
+      video.pause();
+    };
   }, []);
 
   return (
