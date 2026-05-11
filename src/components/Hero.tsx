@@ -127,15 +127,32 @@ const HeroTabs = () => {
 
 export const Hero = () => {
   const navigate = useNavigate();
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = false;
+      const playPromise = videoRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // If blocked, try to play muted first, but we want sound
+          // We'll leave it to the browser's autoplay policy
+        });
+      }
+    }
+  }, []);
 
   return (
     <section className="relative min-h-[110vh] w-full flex flex-col items-center justify-center pt-32 pb-40 px-6 overflow-hidden bg-brand-dark-sky text-center hero-gradient">
       
-      {/* Image Background Layer */}
+      {/* Video Background Layer */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000"
-          alt="Snow Capped Mountains"
+        <video
+          ref={videoRef}
+          src="/video111.mp4"
+          autoPlay
+          loop
+          playsInline
           className="w-full h-full object-cover"
         />
         
