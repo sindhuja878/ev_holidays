@@ -245,7 +245,7 @@ const TestimonialCarousel = () => {
       category: "Solo",
       categoryColor: "bg-[#146b0a]",
       comment: "As a solo traveler, I appreciate the safety and curated local experiences EV Holidays provided. It felt truly personalized and authentic.",
-      avatar: "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&q=80&w=400"
+      avatar: "/testimonials/1.jpg"
     },
     {
       name: "Rahul Mehta",
@@ -254,7 +254,7 @@ const TestimonialCarousel = () => {
       category: "Corporate",
       categoryColor: "bg-[#146b0a]",
       comment: "EV Holidays transformed our annual retreat into a seamless experience. Every detail from logistics to luxury stays was handled with precision and care.",
-      avatar: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=400"
+      avatar: "/testimonials/2.jpg"
     },
     {
       name: "Priya Patel",
@@ -263,7 +263,16 @@ const TestimonialCarousel = () => {
       category: "Retreat",
       categoryColor: "bg-[#146b0a]",
       comment: "The team retreat in Vietnam was flawlessly organized. Every detail from the luxury stay to the team-building activities was perfect.",
-      avatar: "https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&q=80&w=400"
+      avatar: "/testimonials/3.jpg"
+    },
+    {
+      name: "Amit Singhal",
+      role: "Operations Director",
+      destination: "Mauritius",
+      category: "Group",
+      categoryColor: "bg-[#146b0a]",
+      comment: "The precision and quality of service provided by EV Holidays is unmatched. Our group trip to Mauritius was perfectly executed from start to finish.",
+      avatar: "/testimonials/4.jpg"
     }
   ];
 
