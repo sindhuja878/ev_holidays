@@ -293,50 +293,16 @@ const TestimonialCarousel = () => {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="w-full relative z-10"
           >
-            <div className="bg-[#021a02]/40 backdrop-blur-3xl border border-[#146b0a]/30 p-10 md:p-16 lg:p-20 rounded-[3rem] md:rounded-[4rem] relative shadow-[0_30px_60px_rgba(0,0,0,0.6)] flex flex-col md:flex-row items-center md:items-start gap-12 group hover:shadow-[0_40px_80px_rgba(20,107,10,0.2)] transition-shadow duration-700">
+            <div className="bg-[#021a02]/40 backdrop-blur-3xl border border-[#146b0a]/30 p-2 md:p-4 rounded-[3rem] md:rounded-[4rem] relative shadow-[0_30px_60px_rgba(0,0,0,0.6)] group hover:shadow-[0_40px_80px_rgba(20,107,10,0.2)] transition-shadow duration-700 overflow-hidden">
+              <img 
+                src={item.avatar} 
+                alt={item.name} 
+                className="w-full h-auto rounded-[2.5rem] md:rounded-[3.5rem] object-contain shadow-2xl"
+                referrerPolicy="no-referrer"
+              />
               
               {/* Subtle animated border highlight */}
               <div className="absolute inset-0 rounded-[3rem] md:rounded-[4rem] border border-white/5 pointer-events-none" />
-              <div className="absolute inset-0 bg-gradient-to-br from-[#146b0a]/10 to-transparent rounded-[3rem] md:rounded-[4rem] pointer-events-none opacity-50" />
-
-              {/* Avatar with Badge */}
-              <div className="relative shrink-0 z-20">
-                <motion.div 
-                  whileHover={{ scale: 1.05 }}
-                  className="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-[#146b0a]/50 shadow-[0_0_30px_rgba(20,107,10,0.3)]"
-                >
-                  <img src={item.avatar} alt={item.name} className="w-full h-full object-cover transition-all duration-700" referrerPolicy="no-referrer" />
-                </motion.div>
-                <div className={cn(
-                  "absolute -bottom-4 right-4 px-6 py-2 rounded-full shadow-2xl border border-white/20",
-                  item.categoryColor
-                )}>
-                   <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white drop-shadow-md">{item.category}</span>
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="flex-1 text-center md:text-left relative z-20 pt-4">
-                <div className="flex justify-center md:justify-start gap-1.5 mb-8">
-                  {[...Array(5)].map((_, star) => (
-                    <Star key={star} className="w-5 h-5 md:w-6 md:h-6 fill-[#146b0a] text-[#146b0a] drop-shadow-[0_0_8px_rgba(20,107,10,0.6)]" />
-                  ))}
-                </div>
-                
-                <h3 className="text-2xl md:text-4xl text-white/95 leading-relaxed font-serif italic mb-12 relative tracking-wide">
-                  &ldquo;{item.comment}&rdquo;
-                  <Quote className="absolute -top-12 -left-6 md:-left-12 w-32 h-32 text-[#146b0a]/10 pointer-events-none" />
-                </h3>
-
-                <div className="space-y-3 pt-8 border-t border-white/10">
-                  <h4 className="text-white font-sans font-bold text-xl md:text-2xl tracking-tight uppercase">{item.name}</h4>
-                  <div className="flex flex-wrap justify-center md:justify-start items-center gap-3">
-                    <span className="text-[#146b0a] text-[11px] font-black uppercase tracking-[0.2em]">{item.role}</span>
-                    <span className="text-white/20 text-xs font-light">|</span>
-                    <span className="text-white/60 text-[11px] font-black uppercase tracking-[0.2em]">{item.destination}</span>
-                  </div>
-                </div>
-              </div>
             </div>
           </motion.div>
         </AnimatePresence>
