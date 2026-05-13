@@ -185,6 +185,8 @@ export const Hero = () => {
         {/* Subtle Gradient Overlays for Readability without darkening the video too much */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/70 pointer-events-none" />
         <div className="absolute inset-0 bg-black/10 pointer-events-none" />
+        {/* Localized mask to hide video watermark */}
+        <div className="absolute bottom-0 right-0 w-48 h-24 bg-gradient-to-tl from-black/80 via-black/40 to-transparent pointer-events-none" />
       </div>
 
       {/* Hero Content */}
