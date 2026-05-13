@@ -179,14 +179,14 @@ export const Hero = () => {
           autoPlay
           loop
           playsInline
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover scale-[1.1] pointer-events-none"
         />
         
         {/* Subtle Gradient Overlays for Readability without darkening the video too much */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/70 pointer-events-none" />
         <div className="absolute inset-0 bg-black/10 pointer-events-none" />
         {/* Localized mask to hide video watermark */}
-        <div className="absolute bottom-0 right-0 w-48 h-24 bg-gradient-to-tl from-black/80 via-black/40 to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-64 h-32 bg-gradient-to-tl from-black/95 via-black/50 to-transparent pointer-events-none" />
       </div>
 
       {/* Hero Content */}
