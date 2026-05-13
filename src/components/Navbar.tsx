@@ -48,20 +48,20 @@ export const Navbar = () => {
           <img 
             src="/logo11.png" 
             alt="EV Holidays" 
-            className="h-20 md:h-32 w-auto object-contain drop-shadow-md group-hover:scale-105 transition-transform"
+            className="h-28 md:h-44 w-auto object-contain drop-shadow-md group-hover:scale-105 transition-transform"
             referrerPolicy="no-referrer"
           />
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-12">
           {menuItems.map((item) => (
             <Link
               key={item.name}
               to={item.href}
               onClick={(e) => handleNavClick(e, item.href)}
               className={cn(
-                "text-xs uppercase tracking-widest font-bold transition-all duration-500 hover:text-brand-gold-end",
+                "text-sm uppercase tracking-widest font-bold transition-all duration-500 hover:text-brand-gold-end",
                 item.name === 'Home' ? 'text-brand-gold-end' : 'text-white/80'
               )}
             >
@@ -73,7 +73,7 @@ export const Navbar = () => {
             whileTap={{ scale: 0.95 }}
             onClick={() => navigate('/ai-planner')}
             className={cn(
-              "px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-[0.2em] shadow-xl transition-all duration-500 bg-brand-gold-end text-brand-navy hover:shadow-brand-gold-end/20"
+              "px-10 py-4 rounded-full text-xs font-black uppercase tracking-[0.2em] shadow-xl transition-all duration-500 bg-brand-gold-end text-brand-navy hover:shadow-brand-gold-end/20"
             )}
           >
             Plan Trip
