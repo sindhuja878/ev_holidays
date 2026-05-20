@@ -581,34 +581,34 @@ const DestinationAccordion = () => {
 
   const destinations = [
     {
-      name: "Taj Mahal",
-      location: "Agra, India",
+      name: "Souther Hills",
+      location: "Hill Stations",
+      img: "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&q=80&w=1200",
+      desc: "Ooty, Kodaikanal, Munnar, Assam and Wayanad"
+    },
+    {
+      name: "Wonder Structure",
+      location: "Heritage",
       img: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&q=80&w=1200",
-      desc: "Experience the eternal symbol of love and architectural perfection."
+      desc: "Jaipur - Pink city, Taj mahal"
     },
     {
-      name: "Tiger's Nest",
-      location: "Paro, Bhutan",
-      img: "https://images.unsplash.com/photo-1544085311-11a028465b03?auto=format&fit=crop&q=80&w=1200",
-      desc: "A sacred monastery perched dramatically on a cliffside."
+      name: "Coastal India",
+      location: "Beaches & Islands",
+      img: "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&q=80&w=1200",
+      desc: "Goa, Lakshwadeep, Andaman and Nicobar Island (Havelock)"
     },
     {
-      name: "Vietnam",
-      location: "Southeast Asia",
-      img: "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&q=80&w=1200",
-      desc: "Sail through the limestone karsts of Ha Long Bay and explore the ancient charm of Hoi An."
+      name: "Snow Scenic",
+      location: "Himalayas",
+      img: "https://images.unsplash.com/photo-1486916856992-e4db22c8df33?auto=format&fit=crop&q=80&w=1200",
+      desc: "Himachal Pradesh, Jammu and Kashmir, Ladhak and Tawang"
     },
     {
-      name: "Ubud",
-      location: "Bali, Indonesia",
-      img: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&q=80&w=1200",
-      desc: "Rejuvenate amidst lush terraced rice fields and Balinese spirit."
-    },
-    {
-       name: "Everest Base Camp",
-       location: "Solukhumbu, Nepal",
-       img: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&q=80&w=1200",
-       desc: "The ultimate trek to the foot of the world's highest peak."
+      name: "Scotland of India",
+      location: "Misty Valleys",
+      img: "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?auto=format&fit=crop&q=80&w=1200",
+      desc: "Coorg, Chikmagalur and Nagarhole"
     }
   ];
 
