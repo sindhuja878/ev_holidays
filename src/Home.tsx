@@ -601,7 +601,7 @@ const DestinationAccordion = () => {
     {
       name: "Snow Scenic",
       location: "Himalayas",
-      img: "https://images.unsplash.com/photo-1486916856992-e4db22c8df33?auto=format&fit=crop&q=80&w=1200",
+      img: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1200",
       desc: "Himachal Pradesh, Jammu and Kashmir, Ladhak and Tawang"
     },
     {
